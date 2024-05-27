@@ -32,7 +32,7 @@ if st.button("Get Answer"):
     if uploaded_image is not None and question:
         try:
             # Process image and question to get the answer
-            answer = process_image_and_question(processor, model, image, question)
+            answer = process_image_and_question(image, question)
             # Display the answer
             st.write(f"Answer: {answer}")
         except Exception as e:
