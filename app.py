@@ -13,7 +13,7 @@ if uploaded_image is not None:
     image = Image.open(uploaded_image)
     # Resize the image to a maximum width of 500 pixels
     resized_image = image.resize((500, int(500 * image.height / image.width)))
-    st.image(resized_image, caption="Uploaded Image")
+    st.image(resized_image, caption="Uploaded Image", output_format='auto')
 
 # User question input
 question = st.text_input("Ask a question about the image")
