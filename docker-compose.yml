@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 services:
   multimodal_app:
     image: multimodal_app
