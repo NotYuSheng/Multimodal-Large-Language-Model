@@ -3,7 +3,7 @@ from PIL import Image
 import torch
 
 device = torch.device('cpu')
-processor, model = load_model_with_error_handling()
+processor, model = load_model()
 
 def load_model():
     # Load the processor and model
