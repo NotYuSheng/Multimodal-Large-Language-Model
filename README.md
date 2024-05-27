@@ -17,19 +17,19 @@ The app was created and hosted on:
 
 ## Usage
 1.  Build the Docker Image:
-```zsh
+```
 docker-compose build
 ```
 
 2.  Run Docker container
-```zsh
+```
 docker-compose up -d
 ```
 3.  Access the web page on
-```zsh
+```
 http://localhost:8501
 ```
 4.  Stopping Docker container
-```zsh
+```
 docker-compose down
 ```
