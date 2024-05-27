@@ -3,6 +3,7 @@ from PIL import Image
 import torch
 
 device = torch.device('cpu')
+processor, model = load_model_with_error_handling()
 
 def load_model():
     # Load the processor and model
@@ -10,7 +11,7 @@ def load_model():
     model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
     return processor, model
 
-def process_image_and_question(processor, model, image, question):
+def process_image_and_question(image, question):
     # Preprocess the image and question
     inputs = processor(image, question, return_tensors="pt")
     
