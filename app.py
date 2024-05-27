@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 from model import load_model, process_image_and_question
 
-# Load model and processor outside the Streamlit app
+# Load model and processor
 processor, model = load_model()
 
 # Streamlit app
