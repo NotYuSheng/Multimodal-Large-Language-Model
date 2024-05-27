@@ -4,36 +4,30 @@ import torch
 
 device = torch.device('cpu')
 
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering
+
 def load_model():
     # Load the processor and model
-    processor = ViLBERTProcessor.from_pretrained("microsoft/vilbert-base")
-    model = ViLBERTForQuestionAnswering.from_pretrained("microsoft/vilbert-base")
-    return processor, model
+    tokenizer = AutoTokenizer.from_pretrained("liuhaotian/llava-v1.6-vicuna-7b")
+    model = AutoModelForQuestionAnswering.from_pretrained("liuhaotian/llava-v1.6-vicuna-7b")
+    return tokenizer, model
 
 processor, model = load_model()
 
-def process_image_and_question(processor, model, image, question):
-    # Resize the image to a suitable size if needed
-    # For ViLBERT, images typically need to be resized to 224x224
-    resized_image = image.resize((224, 224))
-    
-    # Convert the image to RGB format if it's not already in that format
-    if resized_image.mode != "RGB":
-        resized_image = resized_image.convert("RGB")
-    
-    # Convert the image to PyTorch tensor
-    image_tensor = processor.feature_extractor(images=resized_image, return_tensors="pt").to(device)
-    
-    # Preprocess the question
-    inputs = processor.tokenizer(image, question, padding="max_length", max_length=128, truncation=True, return_tensors="pt").to(device)
+def process_image_and_question(tokenizer, model, image, question):
+    # Encode the question
+    inputs = tokenizer(question, return_tensors="pt")
     
     # Generate the answer
     outputs = model(**inputs)
     
     # Extract the answer from the model's output
-    answer = processor.decode(outputs["question_answering"]["answer"][0], skip_special_tokens=True)
+    answer_start = torch.argmax(outputs.start_logits)
+    answer_end = torch.argmax(outputs.end_logits) + 1
+    answer = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(inputs.input_ids[0][answer_start:answer_end]))
     
     return answer
+
 """
 
 def load_model():
