@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  multimodal_app:
+    image: multimodal_app
+    ports:
+      - "8501:8501"
+    deploy:
+      resources:
+        limits:
+          memory: 4g
