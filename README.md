@@ -2,14 +2,16 @@
 ## Usage
 1.  Build the Docker Image:
 ```
-docker build -t multimodal_app .
+docker-compose build
 ```
 
 2.  Run Docker container
 ```
-docker run -p 8501:8501 multimodal_app
+docker-compose up -d
 ```
 3.  Access the web page on
 ```
 http://localhost:8501
 ```
+4.  Stopping Docker container
+docker-compose down
