@@ -13,7 +13,7 @@ def process_image_and_question(processor, model, image, question):
     inputs = processor(image, question, return_tensors="pt")
     
     # Generate the answer
-    outputs = model.generate(**inputs)
+    outputs = model.generate(**inputs, max_new_tokens=50)
     answer = processor.decode(outputs[0], skip_special_tokens=True)
     
     return answer
