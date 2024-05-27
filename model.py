@@ -6,8 +6,8 @@ device = torch.device('cpu')
 
 def load_model():
     # Load the processor and model
-    processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-    model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+    processor = ViLBERTProcessor.from_pretrained("microsoft/vilbert-base")
+    model = ViLBERTForQuestionAnswering.from_pretrained("microsoft/vilbert-base")
     return processor, model
 
 processor, model = load_model()
