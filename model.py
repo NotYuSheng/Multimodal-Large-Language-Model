@@ -12,6 +12,7 @@ def load_model():
 
 processor, model = load_model()
 
+"""
 def process_image_and_question(image, question):
     # Preprocess the image and question
     inputs = processor(image, question, return_tensors="pt")
@@ -19,5 +20,18 @@ def process_image_and_question(image, question):
     # Generate the answer
     outputs = model.generate(**inputs, max_new_tokens=50)
     answer = processor.decode(outputs[0], skip_special_tokens=True)
+    
+    return answer
+"""
+
+def process_image_and_question(processor, model, image, question):
+    # Preprocess the image and question
+    inputs = processor(image, question, return_tensors="pt", padding=True, truncation=True)
+    
+    # Generate the answer
+    outputs = model(**inputs)
+    
+    # Extract the answer from the model's output
+    answer = processor.decode(outputs["question_answering"]["answer"][0], skip_special_tokens=True)
     
     return answer
