@@ -9,3 +9,7 @@ docker build -t my_multimodal_app .
 ```
 docker run -p 8501:8501 my_multimodal_app
 ```
+3.  Access the web page on
+```
+http://localhost:8501
+```
