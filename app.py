@@ -2,6 +2,20 @@ import streamlit as st
 from PIL import Image
 from model import load_model, process_image_and_question
 
+st.markdown(
+    """
+    <style>
+        button[title^=Exit]+div [data-testid=stImage]{
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
 # Streamlit app
 st.title("Multimodal Large Language Model Web App")
 
