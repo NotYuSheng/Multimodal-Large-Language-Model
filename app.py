@@ -2,16 +2,6 @@ import streamlit as st
 from PIL import Image
 from model import load_model, process_image_and_question
 
-# Load model and processor
-def load_model_with_error_handling():
-    try:
-        return load_model()
-    except Exception as e:
-        st.error(f"Error loading model: {str(e)}")
-        return None, None
-        
-processor, model = load_model_with_error_handling()
-
 # Streamlit app
 st.title("Multimodal Large Language Model Web App")
 
