@@ -14,6 +14,32 @@ def load_model():
 
 processor, model = load_model()
 
+def process_image_and_question(tokenizer, model, image, question, max_new_token=50, num_beams=5, temperature=1.0, top_k=50, top_p=0.95, do_sample=True):
+    # Ensure inputs are on the CPU
+    image_tensor = tokenizer.feature_extractor(images=image, return_tensors="pt").to(device)
+    
+    # Preprocess the question
+    inputs = tokenizer(question, return_tensors="pt", padding="max_length", max_length=128, truncation=True).to(device)
+    
+    # Generate the answer
+    output_ids = model.generate(
+        vision_x=image_tensor,
+        lang_x=inputs["input_ids"],
+        attention_mask=inputs["attention_mask"],
+        max_new_tokens=max_new_token,
+        num_beams=num_beams,
+        temperature=temperature,
+        top_k=top_k,
+        top_p=top_p,
+        do_sample=do_sample,
+    )[0]
+    
+    # Decode the output ids to get the generated text
+    answer = tokenizer.decode(output_ids, skip_special_tokens=True)
+    
+    return answer
+    
+"""
 def process_image_and_question(tokenizer, model, image, question):
     # Encode the question
     inputs = tokenizer(question, return_tensors="pt")
@@ -27,7 +53,7 @@ def process_image_and_question(tokenizer, model, image, question):
     answer = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(inputs.input_ids[0][answer_start:answer_end]))
     
     return answer
-
+"""
 """
 
 def load_model():
