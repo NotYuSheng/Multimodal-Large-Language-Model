@@ -2,7 +2,7 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import torch
 
-device = torch.device('cpu')
+# device = torch.device('cpu') # Add if GPU not available
 
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 
