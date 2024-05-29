@@ -2,7 +2,7 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import torch
 
-# device = torch.device('cpu') # Add if GPU not available
+#device = torch.device('cpu') # Add if GPU not available
 
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 
@@ -16,7 +16,7 @@ processor, model = load_model()
 
 def process_image_and_question(tokenizer, model, image, question, max_new_token=50, num_beams=5, temperature=1.0, top_k=50, top_p=0.95, do_sample=True):
     # Ensure inputs are on the CPU
-    image_tensor = tokenizer.feature_extractor(images=image, return_tensors="pt").to(device)
+    #image_tensor = tokenizer.feature_extractor(images=image, return_tensors="pt").to(device)
     
     # Preprocess the question
     inputs = tokenizer(question, return_tensors="pt", padding="max_length").to(device)
