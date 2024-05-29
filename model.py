@@ -22,7 +22,7 @@ def process_image_and_question(tokenizer, model, image, question, max_new_token=
     inputs = tokenizer(question, return_tensors="pt", padding="max_length").to(device)
     
     # Compare the lengths
-    max_length = 128 # Increase if neccesary
+    max_length = 256 # Increase if neccesary
     input_ids = inputs['input_ids'][0]
     tokenized_length = len(input_ids)
     if tokenized_length > max_length:
