@@ -19,7 +19,17 @@ def process_image_and_question(tokenizer, model, image, question, max_new_token=
     image_tensor = tokenizer.feature_extractor(images=image, return_tensors="pt").to(device)
     
     # Preprocess the question
-    inputs = tokenizer(question, return_tensors="pt", padding="max_length", max_length=128, truncation=True).to(device)
+    inputs = tokenizer(question, return_tensors="pt", padding="max_length").to(device)
+    
+    # Compare the lengths
+    max_length = 128 # Increase if neccesary
+    input_ids = inputs['input_ids'][0]
+    tokenized_length = len(input_ids)
+    if tokenized_length > max_length:
+        print(f"Tokenized length ({tokenized_length}) exceeds max_length ({max_length})")
+    else:
+        print(f"Tokenized length ({tokenized_length}) is within the max_length ({max_length})")
+    
     
     # Generate the answer
     output_ids = model.generate(
