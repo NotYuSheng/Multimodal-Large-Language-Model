@@ -30,7 +30,6 @@ def process_image_and_question(tokenizer, model, image, question, max_new_token=
     else:
         print(f"Tokenized length ({tokenized_length}) is within the max_length ({max_length})")
     
-    
     # Generate the answer
     output_ids = model.generate(
         vision_x=image_tensor,
