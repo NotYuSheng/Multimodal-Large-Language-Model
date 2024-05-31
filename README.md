@@ -16,25 +16,31 @@ The app was created and hosted on:
 6. **Internet Access**
 
 ## Usage
-1.  Build the Docker Image:
+1.  Clone this repository and navigate to LLaVA folder
+```
+git clone https://github.com/NotYuSheng/CT-Multimodal-Large-Language-Model.git
+cd CT-Multimodal-Large-Language-Model
+```
+
+2.  Build the Docker Image:
 ```
 docker build -t multimodal_app
 ```
 
-2.  Build the Docker compose:
+3.  Build the Docker compose:
 ```
 docker-compose build
 ```
 
-3.  Run Docker container
+4.  Run Docker container
 ```
 docker-compose up -d
 ```
-4.  Access the web page on
+5.  Access the web page on
 ```
 http://localhost:8501
 ```
-5.  Stopping Docker container
+6.  Stopping Docker container
 ```
 docker-compose down
 ```
