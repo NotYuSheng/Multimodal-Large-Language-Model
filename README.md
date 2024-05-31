@@ -24,7 +24,7 @@ cd CT-Multimodal-Large-Language-Model
 
 2.  Build the Docker Image:
 ```
-docker build -t multimodal_app
+docker build -t multimodal_app .
 ```
 
 3.  Build the Docker compose:
