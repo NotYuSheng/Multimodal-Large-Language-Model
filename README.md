@@ -18,18 +18,23 @@ The app was created and hosted on:
 ## Usage
 1.  Build the Docker Image:
 ```
+docker build -t multimodal_app
+```
+
+2.  Build the Docker compose:
+```
 docker-compose build
 ```
 
-2.  Run Docker container
+3.  Run Docker container
 ```
 docker-compose up -d
 ```
-3.  Access the web page on
+4.  Access the web page on
 ```
 http://localhost:8501
 ```
-4.  Stopping Docker container
+5.  Stopping Docker container
 ```
 docker-compose down
 ```
