@@ -29,7 +29,8 @@ def process_image_and_question(tokenizer, model, image, question, max_new_token=
         print(f"Tokenized length ({tokenized_length}) exceeds max_length ({max_length})")
     else:
         print(f"Tokenized length ({tokenized_length}) is within the max_length ({max_length})")
-    
+
+    """
     # Generate the answer
     output_ids = model.generate(
         vision_x=image_tensor,
@@ -41,6 +42,19 @@ def process_image_and_question(tokenizer, model, image, question, max_new_token=
         top_k=top_k,
         top_p=top_p,
         do_sample=do_sample,
+    )[0]
+    """
+    # Adjusting the generation parameters to fine-tune output
+    output_ids = model.generate(
+        vision_x=vision_input,
+        lang_x=inputs["input_ids"],
+        attention_mask=inputs["attention_mask"],
+        max_new_tokens=max_new_token,  # Adjust this if you expect shorter/longer responses
+        num_beams=num_beams,           # Beam search for better quality output
+        temperature=temperature,       # Control randomness
+        top_k=top_k,                   # Limit to top-k probable tokens
+        top_p=top_p,                   # Nucleus sampling for variability
+        do_sample=do_sample            # Whether to use sampling or not
     )[0]
     
     # Decode the output ids to get the generated text
