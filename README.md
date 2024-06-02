@@ -22,7 +22,7 @@ git clone https://github.com/NotYuSheng/CT-Multimodal-Large-Language-Model.git
 cd CT-Multimodal-Large-Language-Model
 ```
 
-2.  Build the Docker Image:
+~~2.  Build the Docker Image:~~
 ```
 docker build -t multimodal_app .
 ```
