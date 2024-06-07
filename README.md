@@ -18,12 +18,17 @@ cd Multimodal-Large-Language-Model
 docker build -t multimodal_app .
 ```
 
-3.  Interactive Run (Start Interactive shell)
+3.  Map port 8501 from the container to port 8501 on the host machine
+```
+docker run -p 8501:8501 multimodal_app
+```
+
+~~3.  Interactive Run (Start Interactive shell)~~
 ```
 docker run -it --name my_multimodal_container multimodal_app /bin/bash
 ```
 
-3.  Detached Run (Run in background)
+~~3.  Detached Run (Run in background)~~
 ```
 docker run -d --name my_multimodal_container multimodal_app
 
