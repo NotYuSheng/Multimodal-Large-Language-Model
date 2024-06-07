@@ -27,4 +27,4 @@ COPY . .
 EXPOSE 8501
 
 # Command to run the application
-CMD ["streamlit", "run", "--server.enableCORS", "false", "--server.enableXsrfProtection", "false", "app.py"]
+CMD ["bash", "-c", "streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py & ollama serve"]
