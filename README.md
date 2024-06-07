@@ -27,9 +27,3 @@ docker run -p 8501:8501 multimodal_app
 ```
 docker run -it -p 8501:8501 multimodal_app /bin/bash
 ```
-
-~~4.  Detached Run (Run in background)~~
-```
-docker run -d --name my_multimodal_container multimodal_app
-
-```
