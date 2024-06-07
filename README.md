@@ -23,12 +23,12 @@ docker build -t multimodal_app .
 docker run -p 8501:8501 multimodal_app
 ```
 
-~~3.  Interactive Run (Start Interactive shell)~~
+4.  Interactive Run (Start Interactive shell)
 ```
-docker run -it --name my_multimodal_container multimodal_app /bin/bash
+docker run -it -p 8501:8501 multimodal_app /bin/bash
 ```
 
-~~3.  Detached Run (Run in background)~~
+~~4.  Detached Run (Run in background)~~
 ```
 docker run -d --name my_multimodal_container multimodal_app
 
