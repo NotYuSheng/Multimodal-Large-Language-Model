@@ -1,4 +1,4 @@
-# CT-Multimodal-Large-Language-Model
+# Multimodal-Large-Language-Model
 
 ## Host requirements
 1. **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
