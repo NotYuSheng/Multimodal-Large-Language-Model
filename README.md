@@ -1,7 +1,5 @@
 # Multimodal-Large-Language-Model (MMLLM)
 
-Localized MMLLM
-
 ## Host requirements
 1. **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
 2. **Minimum of 8 GB RAM**
