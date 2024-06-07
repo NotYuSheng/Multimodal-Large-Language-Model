@@ -11,7 +11,7 @@ Localized MMLLM
 ## Usage
 1.  Clone this repository and navigate to project folder
 ```
-git clone https://github.com/NotYuSheng/CT-Multimodal-Large-Language-Model.git
+git clone https://github.com/NotYuSheng/Multimodal-Large-Language-Model.git
 cd Multimodal-Large-Language-Model
 ```
 
