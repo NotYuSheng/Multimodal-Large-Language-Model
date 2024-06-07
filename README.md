@@ -7,7 +7,7 @@
 4. **Port 8501** available for mapping to the container (else redefine port number in Dockerfile)
 
 ## Usage
-1.  Clone this repository and navigate to LLaVA folder
+1.  Clone this repository and navigate to project folder
 ```
 git clone https://github.com/NotYuSheng/CT-Multimodal-Large-Language-Model.git
 cd Multimodal-Large-Language-Model
@@ -18,15 +18,13 @@ cd Multimodal-Large-Language-Model
 docker build -t multimodal_app .
 ```
 
-4.  Run Docker container
+3.  Interactive Run (Start Interactive shell)
 ```
-docker-compose up -d
+docker run -it --name my_multimodal_container multimodal_app /bin/bash
 ```
-5.  Access the web page on
+
+3.  Detached Run (Run in background)
 ```
-http://localhost:8501
-```
-6.  Stopping Docker container
-```
-docker-compose down
+docker run -d --name my_multimodal_container multimodal_app
+
 ```
