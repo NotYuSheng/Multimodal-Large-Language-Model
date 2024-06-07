@@ -6,9 +6,9 @@
 3. **Port 8501** available for mapping to the container (else redefine port number in Dockerfile and run command)
 4. **Disk Space** Dependant on model size
 
-| Model Name | Size |
-| --- | --- |
-| llava:7b | 4.7GB |
+| Model Name | Size | Link |
+| --- | --- | --- |
+| llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
 
 ## Usage
 1.  Clone this repository and navigate to project folder
