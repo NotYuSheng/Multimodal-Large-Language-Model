@@ -9,8 +9,8 @@ The app was created and hosted on:
 
 ## Host requirements
 1. **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
-2. **Docker Compose**: [Installation Guide](https://docs.docker.com/compose/install/)
-3. **Minimum of 4 GB RAM**
+~~2. **Docker Compose**: [Installation Guide](https://docs.docker.com/compose/install/)~~
+3. **Minimum of 8 GB RAM**
 4. **Adequate Disk Space** for Docker images and containers
 5. **Port 8501** available for mapping to the container (else redefine port number in Dockerfile)
 6. **Internet Access**
