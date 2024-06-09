@@ -1,5 +1,6 @@
 import streamlit as st
 import tempfile
+import ollama
 
 # Streamlit app
 st.title("Multimodal Large Language Model")
