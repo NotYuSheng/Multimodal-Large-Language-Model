@@ -39,6 +39,6 @@ if st.button("Get Answer"):
             st.write(f"Answer: {response['message']['content']}")
             
         except Exception as e:
-            st.error("An error occurred while processing the image and question. Please try again.")
+            st.error(f"An error occurred while processing the image and question. Please try again. Error details: {e}")
     else:
         st.warning("Please upload an image and ask a question.")
