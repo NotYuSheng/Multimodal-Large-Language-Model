@@ -26,5 +26,8 @@ COPY . .
 # Expose the port that Streamlit will run on
 EXPOSE 8501
 
+# Pull model
+RUN ollama pull llama3
+
 # Command to run the application
 CMD ["bash", "-c", "streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py & ollama serve"]
