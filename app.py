@@ -16,6 +16,9 @@ if uploaded_image is not None:
         temp_file.write(uploaded_image.read())
         temp_file_path = temp_file.name
 
+    # Set read permissions for all users
+    os.chmod(temp_file_path, 0o644)
+    
     # Display the image with resized dimensions
     st.image(temp_file_path, caption="Uploaded Image")
 
