@@ -12,7 +12,7 @@ temp_file_path = ""
 if uploaded_image is not None:
     # Save uploaded file to a temporary location
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-        temp_file.write(uploaded_file.read())
+        temp_file.write(uploaded_image.read())
         temp_file_path = temp_file.name
 
     # Display the image with resized dimensions
