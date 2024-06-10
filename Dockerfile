@@ -4,6 +4,9 @@ FROM python:3.10-slim
 # Update package list
 RUN apt-get update
 
+# Needed for lspci, automatic GPU detection
+RUN apt-get install pciutils
+
 # Install packages
 RUN apt-get install -y curl \
     nano
