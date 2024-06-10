@@ -8,7 +8,7 @@ import base64
 from PIL import Image
 
 # Title of the Streamlit app
-st.title("Streamed Response Generator")
+st.title("MMLLM")
 
 # Input field for the prompt
 prompt = st.text_input("Enter your prompt:", "What's in this image?")
