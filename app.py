@@ -34,7 +34,7 @@ if st.button("Generate Response"):
         image_base64 = base64.b64encode(uploaded_file.read()).decode("utf-8")
 
         # Include the base64 encoded image in the payload
-        payload["image"] = image_base64
+        payload["images"] = image_base64
 
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
