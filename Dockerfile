@@ -27,7 +27,7 @@ COPY . .
 EXPOSE 8501
 
 # Pull model
-RUN ollama pull llama3
+RUN ollama pull llava
 
 # Command to run the application
 CMD ["bash", "-c", "streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py & ollama serve"]
