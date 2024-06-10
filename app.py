@@ -7,6 +7,9 @@ import uuid
 import base64
 from PIL import Image
 
+# Ollama server address
+url = "http://localhost:11434/api/generate"
+
 # Title of the Streamlit app
 st.title("MMLLM")
 
@@ -34,7 +37,7 @@ if st.button("Generate Response"):
         payload["image"] = image_base64
 
     # Send the POST request
-    response = requests.post("http://localhost:11434/api/generate", json=payload, stream=True)
+    response = requests.post(url, json=payload, stream=True)
 
     # Check if the request was successful
     if response.status_code == 200:
