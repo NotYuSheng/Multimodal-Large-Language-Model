@@ -27,9 +27,14 @@ docker build -t multimodal_app .
 docker run -d -p 8501:8501 multimodal_app
 ```
 
-3.  Or run start with interactive shell
+4.  Wait for model to pull (could take awhile)
+```  
+tail | docker logs <container-id>
 ```
-docker run -d -it -p 8501:8501 multimodal_app /bin/bash
+
+5.  Access Streamlit webpage from host
+```
+localhost:8501
 ```
 
 ## Docker usage commands
