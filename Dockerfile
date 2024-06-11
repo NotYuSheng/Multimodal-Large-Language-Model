@@ -29,8 +29,8 @@ COPY . .
 # Expose the port that Streamlit will run on
 EXPOSE 8501
 
+# Command to run the application
+CMD ["bash", "-c", "streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py & ollama serve & wait"]
+
 # Pull model
 RUN ollama pull llava
-
-# Command to run the application
-CMD ["bash", "-c", "streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py & ollama serve"]
