@@ -24,10 +24,10 @@ docker build -t multimodal_app .
 
 3.  Map port 8501 from the container to port 8501 on the host machine
 ```
-docker run -p 8501:8501 multimodal_app
+docker run -d -p 8501:8501 multimodal_app
 ```
 
 4.  Interactive Run (Start Interactive shell)
 ```
-docker run -it -p 8501:8501 multimodal_app /bin/bash
+docker run -d -it -p 8501:8501 multimodal_app /bin/bash
 ```
