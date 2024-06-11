@@ -34,6 +34,3 @@ RUN chmod +x /app/start_services.sh
 
 # Command to run the application
 CMD ["bash", "-c", "/app/start_services.sh"]
-
-# Pull model
-RUN ollama pull llava
