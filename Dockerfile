@@ -38,8 +38,7 @@ EXPOSE 11434
 RUN chmod +x /app/start_services.sh
 
 # Command to run the application
-CMD ["/bin/bash", "-c", "/app/start_services.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/app/start_services.sh"]
 
 # Set the Streamlit app as the entry point
-ENTRYPOINT ["/bin/bash", "-c", "streamlit run /app/app.py --server.enableCORS false --server.enableXsrfProtection false"]
-
+#ENTRYPOINT ["/bin/bash", "-c", "streamlit run /app/app.py --server.enableCORS false --server.enableXsrfProtection false"]
