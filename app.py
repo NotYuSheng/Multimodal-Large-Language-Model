@@ -3,22 +3,29 @@ import streamlit as st
 import time
 import json
 import os
-import uuid
+import uuid  
 import base64
 from PIL import Image
+
+#CONTEXT = "A chat between a user and an artificial intelligence assistant. The assistant gives helpful, detailed, >
 
 # Ollama server address
 url = "http://localhost:11434/api/generate"
 
 # Title of the Streamlit app
-st.title("MMLLM")
+st.title("Multimodal AI Assistant")
 
 # Input field for the prompt
 prompt = st.text_input("Enter your prompt:", "What's in this image?")
 
-# Image upload field
+# Image upload field 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
+# Directory to save uploaded images
+UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
+if not os.path.exists(UPLOAD_DIR):
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
+    
 # Button to submit the prompt and image
 if st.button("Generate Response"):
     # Initialize the payload
@@ -29,13 +36,28 @@ if st.button("Generate Response"):
 
     # If an image is uploaded, encode it to base64 and include it in the payload
     if uploaded_file is not None:
-        # Open the image and encode it to base64
         image = Image.open(uploaded_file)
-        image_base64 = base64.b64encode(uploaded_file.read()).decode("utf-8")
+        unique_filename = str(uuid.uuid4()) + os.path.splitext(uploaded_file.name)[1]
+        image_filename = os.path.join(UPLOAD_DIR, unique_filename)
+        image.save(image_filename)
+
+        # Set the file permissions to read and writable by all users
+        os.chmod(image_filename, 0o666)
+
+        # Get the absolute path of the image file
+        image_fullpath = os.path.abspath(image_filename)
+
+        with open(image_fullpath, 'rb') as f:
+            img_str = base64.b64encode(f.read()).decode('utf-8')
+            payload["images"] = [img_str]
+        # Open the image and encode it to base64
+        #image = Image.open(uploaded_file)
+        #image_base64 = base64.b64encode(uploaded_file.read()).decode("utf-8")
 
         # Include the base64 encoded image in the payload
-        payload["images"] = [image_base64]
-        print(payload["images"])
+        #image_base64 = "iVBORw0KGgoAAAANSUhEUgAAAG0AAABmCAYAAADBPx+VAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6>
+        #payload["images"] = [image_base64]
+        #print(payload)
 
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
@@ -44,6 +66,8 @@ if st.button("Generate Response"):
     if response.status_code == 200:
         st.write("Response from the model:")
 
+        #print(type(response.json()['choices'][0]['message']['content']))
+        
         # Initialize a placeholder to update the Streamlit display
         response_placeholder = st.empty()
         complete_response = ""
