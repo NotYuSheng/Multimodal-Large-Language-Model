@@ -33,3 +33,5 @@ STREAMLIT_PID=$!
 # Wait for all background processes to complete
 echo "Waiting for background processes to complete..."
 wait $OLLAMA_PID $STREAMLIT_PID
+
+echo "All services startup completed"
