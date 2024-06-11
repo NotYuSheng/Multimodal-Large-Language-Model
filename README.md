@@ -29,7 +29,7 @@ docker run -d -p 8501:8501 multimodal_app
 
 4.  Wait for model to pull (could take awhile)
 ```  
-tail | docker logs <container-id>
+tail | docker logs -f <container-id>
 ```
 
 5.  Access Streamlit webpage from host
