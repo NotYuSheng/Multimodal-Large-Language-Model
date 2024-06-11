@@ -1,9 +1,7 @@
 # Multimodal-Large-Language-Model (MMLLM)
 
 ## Host requirements
-1. **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
-2. **Minimum of 8 GB RAM**
-3. **Disk Space** Dependant on model size
+1.  **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
 
 | Model Name | Size | Link |
 | --- | --- | --- |
