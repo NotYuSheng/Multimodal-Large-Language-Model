@@ -4,12 +4,13 @@ FROM python:3.10-slim
 # Update package list
 RUN apt-get update
 
-# Needed for lspci, automatic GPU detection
-RUN apt-get install -y pciutils
-
 # Install packages
-RUN apt-get install -y curl \
-    nano
+# pciutils: Needed for lspci, automatic GPU detection
+RUN apt-get update && apt-get install -y \
+    pciutils \
+    curl \
+    nano \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
 WORKDIR /app
