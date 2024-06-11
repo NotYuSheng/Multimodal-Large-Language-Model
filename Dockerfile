@@ -42,3 +42,4 @@ CMD ["/bin/bash", "-c", "/app/start_services.sh"]
 
 # Set the Streamlit app as the entry point
 ENTRYPOINT ["/bin/bash", "-c", "streamlit run /app/app.py --server.enableCORS false --server.enableXsrfProtection false"]
+
