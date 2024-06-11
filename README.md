@@ -36,7 +36,7 @@ tail | docker logs -f <container-id>
 ```
 
 ## Docker usage commands
-List running Docker containers
+List Docker containers -a
 ```
 docker ps
 ```
