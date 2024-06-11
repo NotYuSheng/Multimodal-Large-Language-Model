@@ -1,5 +1,0 @@
-streamlit
-transformers
-Pillow
-torch
-sentencepiece
