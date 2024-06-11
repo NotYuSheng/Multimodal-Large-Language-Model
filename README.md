@@ -50,6 +50,8 @@ Check container build status
 docker logs <container-id>
 ```
 
+## Sample
+
 Get interactive shell after container has started
 ```
 docker exec -it <container-id> /bin/bash
