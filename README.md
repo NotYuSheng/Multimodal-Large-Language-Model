@@ -27,7 +27,10 @@ docker build -t multimodal_app .
 docker run -d -p 8501:8501 multimodal_app
 ```
 
-4.  Interactive Run (Start Interactive shell)
+3.  Or run start with interactive shell
 ```
 docker run -d -it -p 8501:8501 multimodal_app /bin/bash
 ```
+
+4.  Subsequent interactive shell (Optional)
+docker exec -it <container-id> /bin/bash
