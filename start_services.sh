@@ -22,6 +22,6 @@ fi
 
 # Start the Streamlit application in the background
 echo "Starting Streamlit application..."
-nohup streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py &
+streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py &
 
-echo "All services startup completed"
+#echo "All services startup completed"
