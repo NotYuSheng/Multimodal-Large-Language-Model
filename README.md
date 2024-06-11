@@ -20,9 +20,9 @@ cd Multimodal-Large-Language-Model
 docker build -t multimodal_app .
 ```
 
-3.  Map port 8501 from the container to port 8501 on the host machine & 11434:11434 (Port mapping OPTIONAL)
+3.  Run image in detached mode
 ```
-docker run -d -p 8501:8501 -p 11434:11434 multimodal_app
+docker run -d multimodal_app
 ```
 
 4.  Wait for model to pull (could take awhile)
