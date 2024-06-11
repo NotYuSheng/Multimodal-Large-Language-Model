@@ -4,9 +4,6 @@
 echo "Starting Ollama service..."
 ollama serve &
 
-# Capture the process ID of the Ollama service
-OLLAMA_PID=$!
-
 # Wait for a few seconds to ensure Ollama service is up
 echo "Waiting for Ollama service to start..."
 sleep 5
@@ -26,12 +23,5 @@ fi
 # Start the Streamlit application in the background
 echo "Starting Streamlit application..."
 nohup streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py &
-
-# Capture the process ID of the Streamlit application
-STREAMLIT_PID=$!
-
-# Wait for all background processes to complete
-echo "Waiting for background processes to complete..."
-wait $OLLAMA_PID $STREAMLIT_PID
 
 echo "All services startup completed"
