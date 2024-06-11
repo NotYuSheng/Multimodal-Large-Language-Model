@@ -1,8 +1,7 @@
 # Multimodal-Large-Language-Model (MMLLM)
 
 ## Host requirements
-1.  **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
-
+**Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
 | Model Name | Size | Link |
 | --- | --- | --- |
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
