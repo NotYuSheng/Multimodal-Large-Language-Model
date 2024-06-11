@@ -25,12 +25,12 @@ docker build -t multimodal_app .
 docker run -d multimodal_app
 ```
 
-4.  Wait for model to pull (Wait for "All services startup completed")
+~~4.  Wait for model to pull (Wait for "All services startup completed")~~
 ```  
 tail | docker logs -f <container-id>
 ```
 
-5.  Access Streamlit webpage from host
+4.  Access Streamlit webpage from host
 ```
 <container-ip>:8501
 ```
