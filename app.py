@@ -35,6 +35,7 @@ if st.button("Generate Response"):
 
         # Include the base64 encoded image in the payload
         payload["images"] = [image_base64]
+        print(payload["images"])
 
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
