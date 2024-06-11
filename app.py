@@ -73,3 +73,4 @@ if st.button("Generate Response"):
 
     else:
         st.write("Failed to get a response from the server.")
+        st.write(f"Response code: {response.status_code}")
