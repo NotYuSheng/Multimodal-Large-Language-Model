@@ -26,8 +26,9 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # Copy the rest of the application code into the container
 COPY . .
 
-# Expose the port that Streamlit will run on
+# Expose the ports
 EXPOSE 8501
+EXPOSE 11434
 
 # Make the start script executable
 RUN chmod +x /app/start_services.sh
