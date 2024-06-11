@@ -33,4 +33,6 @@ docker run -d -it -p 8501:8501 multimodal_app /bin/bash
 ```
 
 4.  Subsequent interactive shell (Optional)
+```
 docker exec -it <container-id> /bin/bash
+```
