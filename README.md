@@ -3,7 +3,9 @@
 ## Host requirements
 1. **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
 2. **Minimum of 8 GB RAM**
+
 ~~3. **Port 8501 & 11434** available for mapping to the container~~
+
 4. **Disk Space** Dependant on model size
 
 | Model Name | Size | Link |
