@@ -25,7 +25,7 @@ fi
 
 # Start the Streamlit application in the background
 echo "Starting Streamlit application..."
-streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py &
+nohup streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py &
 
 # Capture the process ID of the Streamlit application
 STREAMLIT_PID=$!
