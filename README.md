@@ -36,9 +36,9 @@ tail | docker logs -f <container-id>
 ```
 
 ## Docker usage commands
-List Docker containers -a
+List Docker containers
 ```
-docker ps
+docker ps -a
 ```
 
 Check container build status
