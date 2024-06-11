@@ -32,7 +32,18 @@ docker run -d -p 8501:8501 multimodal_app
 docker run -d -it -p 8501:8501 multimodal_app /bin/bash
 ```
 
-4.  Subsequent interactive shell (Optional)
+## Docker usage commands
+List running Docker containers
+```
+docker ps
+```
+
+Check container build status
+```
+docker logs <container-id>
+```
+
+Get interactive shell after container has started
 ```
 docker exec -it <container-id> /bin/bash
 ```
