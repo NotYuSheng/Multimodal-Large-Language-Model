@@ -30,10 +30,10 @@ COPY . .
 EXPOSE 8501
 
 # Make the start script executable
-RUN chmod +x /app/start.sh
+RUN chmod +x /app/start_services.sh
 
 # Command to run the application
-CMD ["bash", "-c", "/app/start.sh"]
+CMD ["bash", "-c", "/app/start_services.sh"]
 
 # Pull model
 RUN ollama pull llava
