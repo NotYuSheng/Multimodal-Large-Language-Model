@@ -33,7 +33,7 @@ tail | docker logs -f <container-id>
 
 5.  Access Streamlit webpage from host
 ```
-localhost:8501
+<container-ip>:8501
 ```
 
 ## Docker usage commands
