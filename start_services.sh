@@ -20,4 +20,7 @@ else
     exit 1
 fi
 
+echo "Starting Streamlit app..."
+nohup streamlit run /app/app.py --server.enableCORS false --server.enableXsrfProtection false &
+
 echo "All services startup completed"
