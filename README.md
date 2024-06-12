@@ -22,7 +22,7 @@ docker build -t multimodal_app .
 
 3.  Run image in detached mode
 ```
-docker run -d multimodal_app
+docker run -d multimodal_app tail -f /dev/null
 ```
 
 4.  Wait for model to pull (Wait for "All services startup completed")
