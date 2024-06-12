@@ -25,7 +25,7 @@ docker build -t multimodal_app .
 docker run -d multimodal_app tail -f /dev/null
 ```
 
-4.  Wait for model to pull (Wait for "All services startup completed")
+4.  Wait for model to pull (Wait for Streamlit app to start)
 ```  
 docker logs -f <container-id>
 ```
