@@ -20,8 +20,7 @@ uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "pn
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
-# Input field for the prompt
-prompt = st.text_input("Enter your prompt:", "What's in this image?")
+
 
 # Directory to save uploaded images
 UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
@@ -30,6 +29,15 @@ if not os.path.exists(UPLOAD_DIR):
 
 session_prompts = []
 session_responses = []
+
+for i in range(len(session_prompts)):
+    with st.chat_message("user"):
+        st.write(session_prompts[i])
+    with st.chat_message("assistant"):
+        st.write(session_responses[i])
+
+# Input field for the prompt
+prompt = st.chat_input("Message AI Assistant")
 
 # Button to submit the prompt and image
 if st.button("Generate Response") and prompt is not None:
@@ -64,7 +72,7 @@ if st.button("Generate Response") and prompt is not None:
 
     # Check if the request was successful
     if response.status_code == 200:
-        st.write("Response from the model:")
+        st.write("## Response from the model:")
         for line in response.iter_lines():
             if line:
                 decoded_line = line.decode('utf-8')
