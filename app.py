@@ -20,8 +20,6 @@ uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "pn
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
-
-
 # Directory to save uploaded images
 UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
 if not os.path.exists(UPLOAD_DIR):
@@ -30,19 +28,12 @@ if not os.path.exists(UPLOAD_DIR):
 session_prompts = []
 session_responses = []
 
-for i in range(len(session_prompts)):
-    with st.chat_message("user"):
-        st.write(session_prompts[i])
-    with st.chat_message("assistant"):
-        st.write(session_responses[i])
-
 # Input field for the prompt
 prompt = st.chat_input("Message AI Assistant")
-
+        
 # Button to submit the prompt and image
-if st.button("Generate Response") and prompt is not None:
+if prompt:
     session_prompts.append(prompt)
-
     # Initialize the payload
     payload = {
         "model": "llava",
@@ -70,9 +61,10 @@ if st.button("Generate Response") and prompt is not None:
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
 
+    response_time = 0
+    
     # Check if the request was successful
     if response.status_code == 200:
-        st.write("## Response from the model:")
         for line in response.iter_lines():
             if line:
                 decoded_line = line.decode('utf-8')
@@ -81,11 +73,17 @@ if st.button("Generate Response") and prompt is not None:
                 eval_count = response_part['eval_count']
                 eval_duration = response_part['eval_duration']
 
-                st.markdown(chat_response)
                 session_responses.append(chat_response)
                 response_time = round(eval_count / eval_duration * 10**9, 2)
-                st.markdown("Response time: "+ str(response_time))
+                
 
     else:
         st.write("Failed to get a response from the server.")
         st.write(f"Response code: {response.status_code}")
+        
+    for i in range(len(session_prompts)):
+        with st.chat_message("user"):
+            st.write(session_prompts[i])
+        with st.chat_message("assistant"):
+            st.write(session_responses[i])
+    st.markdown("Response time: "+ str(response_time))
