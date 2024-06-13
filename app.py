@@ -7,31 +7,35 @@ import uuid
 import base64
 from PIL import Image
 
-#CONTEXT = "A chat between a user and an artificial intelligence assistant. The assistant gives helpful, detailed, >
-
 # Ollama server address
 url = "http://localhost:11434/api/generate"
 
 # Title of the Streamlit app
 st.title("Multimodal AI Assistant")
 
-# Input field for the prompt
-prompt = st.text_input("Enter your prompt:", "What's in this image?")
-
 # Image upload field
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
+
+# Input field for the prompt
+prompt = st.text_input("Enter your prompt:", "What's in this image?")
 
 # Directory to save uploaded images
 UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+session_prompts = []
+session_responses = []
+
 # Button to submit the prompt and image
-if st.button("Generate Response"):
+if st.button("Generate Response") and prompt is not None:
+    session_prompts.append(prompt)
+
     # Initialize the payload
     payload = {
         "model": "llava",
-        "prompt": prompt
+        "prompt": prompt,
+        "stream": False
     }
 
     # If an image is uploaded, encode it to base64 and include it in the payload
@@ -50,14 +54,6 @@ if st.button("Generate Response"):
         with open(image_fullpath, 'rb') as f:
             img_str = base64.b64encode(f.read()).decode('utf-8')
             payload["images"] = [img_str]
-        # Open the image and encode it to base64
-        #image = Image.open(uploaded_file)
-        #image_base64 = base64.b64encode(uploaded_file.read()).decode("utf-8")
-
-        # Include the base64 encoded image in the payload
-        #image_base64 = "iVBORw0KGgoAAAANSUhEUgAAAG0AAABmCAYAAADBPx+VAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6>
-        #payload["images"] = [image_base64]
-        #print(payload)
 
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
@@ -65,36 +61,18 @@ if st.button("Generate Response"):
     # Check if the request was successful
     if response.status_code == 200:
         st.write("Response from the model:")
-
-        #print(type(response.json()['choices'][0]['message']['content']))
-
-        # Initialize a placeholder to update the Streamlit display
-        response_placeholder = st.empty()
-        complete_response = ""
-
-        # Stream the response
         for line in response.iter_lines():
             if line:
-                # Decode the line (response part) from bytes to string
                 decoded_line = line.decode('utf-8')
-
-                # Convert the string response to a dictionary
                 response_part = json.loads(decoded_line)
+                chat_response = response_part['response']
+                eval_count = response_part['eval_count']
+                eval_duration = response_part['eval_duration']
 
-                # Display the response word by word in Streamlit
-                words = response_part['response'].split()
-
-                for word in words:
-                    for char in word:
-                        complete_response += char
-                        html_content = f"""
-                        <div style="white-space: normal;">
-                            {complete_response}
-                        </div>
-                        """
-                        response_placeholder.markdown(html_content, unsafe_allow_html=True)
-                        time.sleep(0.1)
-                complete_response += " "
+                st.markdown(chat_response)
+                session_responses.append(chat_response)
+                response_time = round(eval_count / eval_duration * 10**9, 2)
+                st.markdown("Response time: "+ str(response_time))
 
     else:
         st.write("Failed to get a response from the server.")
