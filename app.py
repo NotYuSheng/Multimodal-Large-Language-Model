@@ -17,8 +17,7 @@ st.title("Multimodal AI Assistant")
 
 # Image upload field
 uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "png", "jpeg"])
-
-MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
+st.sidebar.image(uploaded_file, width= use_column_width=True)
 
 # Directory to save uploaded images
 UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
