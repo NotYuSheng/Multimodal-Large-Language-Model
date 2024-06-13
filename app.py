@@ -7,6 +7,8 @@ import uuid
 import base64
 from PIL import Image
 
+context = None
+
 # Ollama server address
 url = "http://localhost:11434/api/generate"
 
@@ -51,6 +53,9 @@ if prompt:
         "stream": False
     }
 
+    if 'context' in st.session_state:
+        payload["context"] = st.session_state['context']
+
     # If an image is uploaded, encode it to base64 and include it in the payload
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
@@ -83,6 +88,7 @@ if prompt:
                 eval_count = response_part['eval_count']
                 eval_duration = response_part['eval_duration']
                 response_time = round(eval_count / eval_duration * 10**9, 2)
+                st.session_state['context'] = response_part['context']
     else:
         st.write("Failed to get a response from the server.")
         st.write(f"Response code: {response.status_code}")
@@ -93,3 +99,4 @@ if prompt:
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": chat_response})
     st.write("Response time: " + str(response_time) + " second(s)")
+    
