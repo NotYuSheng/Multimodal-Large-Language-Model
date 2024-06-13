@@ -20,9 +20,6 @@ uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "pn
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
-# Image upload field
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
-
 # Input field for the prompt
 prompt = st.text_input("Enter your prompt:", "What's in this image?")
 
