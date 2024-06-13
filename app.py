@@ -5,9 +5,8 @@ import json
 import os
 import uuid
 import base64
+import io
 from PIL import Image
-
-context = None
 
 # Ollama server address
 url = "http://localhost:11434/api/generate"
@@ -15,17 +14,12 @@ url = "http://localhost:11434/api/generate"
 st.set_page_config(page_title="Multimodal AI Assistant")
 
 # Title of the Streamlit app
-st.title("Multimodal AI Assistant")
+st.title("💬 Multimodal AI Assistant")
 
 # Image upload field
 uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "png", "jpeg"])
 if uploaded_file is not None:
     st.sidebar.image(uploaded_file, use_column_width = True, caption='Uploaded image')
-
-# Directory to save uploaded images
-UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
-if not os.path.exists(UPLOAD_DIR):
-    os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -45,7 +39,7 @@ if prompt:
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
-    
+
     # Initialize the payload
     payload = {
         "model": "llava",
@@ -58,20 +52,16 @@ if prompt:
 
     # If an image is uploaded, encode it to base64 and include it in the payload
     if uploaded_file is not None:
+         # Open the image using PIL
         image = Image.open(uploaded_file)
-        unique_filename = str(uuid.uuid4()) + os.path.splitext(uploaded_file.name)[1]
-        image_filename = os.path.join(UPLOAD_DIR, unique_filename)
-        image.save(image_filename)
 
-        # Set the file permissions to read and writable by all users
-        os.chmod(image_filename, 0o666)
-
-        # Get the absolute path of the image file
-        image_fullpath = os.path.abspath(image_filename)
-
-        with open(image_fullpath, 'rb') as f:
-            img_str = base64.b64encode(f.read()).decode('utf-8')
-            payload["images"] = [img_str]
+        # Convert the image to a base64 string
+        buffered = io.BytesIO()
+        image.save(buffered, format=image.format)
+        img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
+        st.write(img_str)
+        # Prepare the payload
+        payload["images"] = [img_str]
 
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
@@ -99,4 +89,3 @@ if prompt:
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": chat_response})
     st.write("Response time: " + str(response_time) + " second(s)")
-    
