@@ -55,5 +55,3 @@ Start docker container after host restart
 ```
 docker container start <container-id>
 ```
-
-## Sample
