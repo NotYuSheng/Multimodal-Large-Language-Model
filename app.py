@@ -3,7 +3,7 @@ import streamlit as st
 import time
 import json
 import os
-import uuid  
+import uuid
 import base64
 from PIL import Image
 
@@ -18,14 +18,14 @@ st.title("Multimodal AI Assistant")
 # Input field for the prompt
 prompt = st.text_input("Enter your prompt:", "What's in this image?")
 
-# Image upload field 
+# Image upload field
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 # Directory to save uploaded images
 UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR, exist_ok=True)
-    
+
 # Button to submit the prompt and image
 if st.button("Generate Response"):
     # Initialize the payload
@@ -67,7 +67,7 @@ if st.button("Generate Response"):
         st.write("Response from the model:")
 
         #print(type(response.json()['choices'][0]['message']['content']))
-        
+
         # Initialize a placeholder to update the Streamlit display
         response_placeholder = st.empty()
         complete_response = ""
