@@ -92,4 +92,4 @@ if prompt:
         st.markdown(chat_response)
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": chat_response})
-    st.write("Response time: " + str(response_time))
+    st.write("Response time: " + str(response_time) + " second(s)")
