@@ -25,15 +25,25 @@ UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-session_prompts = []
-session_responses = []
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 # Input field for the prompt
 prompt = st.chat_input("Message AI Assistant")
-        
+
 # Button to submit the prompt and image
 if prompt:
-    session_prompts.append(prompt)
+    # Display user message in chat message container
+    st.chat_message("user").markdown(prompt)
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
     # Initialize the payload
     payload = {
         "model": "llava",
@@ -62,7 +72,7 @@ if prompt:
     response = requests.post(url, json=payload, stream=True)
 
     response_time = 0
-    
+    chat_response = ""
     # Check if the request was successful
     if response.status_code == 200:
         for line in response.iter_lines():
@@ -72,18 +82,14 @@ if prompt:
                 chat_response = response_part['response']
                 eval_count = response_part['eval_count']
                 eval_duration = response_part['eval_duration']
-
-                session_responses.append(chat_response)
                 response_time = round(eval_count / eval_duration * 10**9, 2)
-                
-
     else:
         st.write("Failed to get a response from the server.")
         st.write(f"Response code: {response.status_code}")
-        
-    for i in range(len(session_prompts)):
-        with st.chat_message("user"):
-            st.write(session_prompts[i])
-        with st.chat_message("assistant"):
-            st.write(session_responses[i])
-    st.markdown("Response time: "+ str(response_time))
+
+    # Display assistant response in chat message container
+    with st.chat_message("assistant"):
+        st.markdown(chat_response)
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": chat_response})
+    st.write("Response time: " + str(response_time))
