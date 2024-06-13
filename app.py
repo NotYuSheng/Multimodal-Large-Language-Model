@@ -59,7 +59,7 @@ if prompt:
         buffered = io.BytesIO()
         image.save(buffered, format=image.format)
         img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
-        st.write(img_str)
+
         # Prepare the payload
         payload["images"] = [img_str]
 
