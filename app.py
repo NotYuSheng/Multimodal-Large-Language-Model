@@ -10,14 +10,15 @@ from PIL import Image
 # Ollama server address
 url = "http://localhost:11434/api/generate"
 
-st.set_page_config(layout="wide", page_title="Multimodal AI Assistant")
+st.set_page_config(page_title="Multimodal AI Assistant")
 
 # Title of the Streamlit app
 st.title("Multimodal AI Assistant")
 
-MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
+# Image upload field
+uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "png", "jpeg"])
 
-col1, col2 = st.columns(2)
+MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
 # Image upload field
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
