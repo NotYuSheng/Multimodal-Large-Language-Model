@@ -17,7 +17,8 @@ st.title("Multimodal AI Assistant")
 
 # Image upload field
 uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "png", "jpeg"])
-st.sidebar.image(uploaded_file, width= use_column_width=True)
+if uploaded_file is not None:
+    st.sidebar.image(uploaded_file, use_column_width = True, caption='Uploaded image')
 
 # Directory to save uploaded images
 UPLOAD_DIR = os.path.join(os.getcwd(), "tmp")
