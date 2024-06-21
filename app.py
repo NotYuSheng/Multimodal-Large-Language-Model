@@ -66,7 +66,7 @@ if prompt:
     # Send the POST request
     response = requests.post(url, json=payload, stream=True)
 
-    response_time = 0
+    #response_time = 0
     chat_response = ""
     # Check if the request was successful
     if response.status_code == 200:
@@ -75,9 +75,10 @@ if prompt:
                 decoded_line = line.decode('utf-8')
                 response_part = json.loads(decoded_line)
                 chat_response = response_part['response']
-                eval_count = response_part['eval_count']
-                eval_duration = response_part['eval_duration']
-                response_time = round(eval_count / eval_duration * 10**9, 2)
+                #eval_count = response_part['eval_count']
+                #eval_duration = response_part['eval_duration']
+                #response_time = round(eval_count / eval_duration * 10**9, 2)
+                total_duration = round(response_part['total_duration'] / 10 **9, 2)
                 st.session_state['context'] = response_part['context']
     else:
         st.write("Failed to get a response from the server.")
@@ -88,4 +89,4 @@ if prompt:
         st.markdown(chat_response)
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": chat_response})
-    st.write("Response time: " + str(response_time) + " second(s)")
+    st.write("Response time: " + str(total_duration) + " second(s)")
