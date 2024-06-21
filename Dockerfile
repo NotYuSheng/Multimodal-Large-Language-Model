@@ -1,9 +1,6 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.10-slim
 
-# Update package list
-RUN apt-get update
-
 # Install packages
 # pciutils: Needed for lspci, automatic GPU detection
 RUN apt-get update && apt-get install -y \
