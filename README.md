@@ -1,4 +1,4 @@
-# Multimodal-Large-Language-Model (MMLLM)
+# Multimodal-Large-Language-Model (MLLM)
 
 ## Tested Models
 | Model Name | Size | Link |
