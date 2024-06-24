@@ -65,3 +65,22 @@ Delete all images
 ```
 docker rmi -f $(docker images -aq)
 ```
+
+## Common Issue(s):
+### Error: 
+```
+docker: Got permission denied while trying to connect to the Docker daemon socket at ...
+```
+### Solution:
+1. Add current user to docker group
+```
+sudo usermod -aG docker $USER
+```
+2. Verify docker can be ran
+```
+docker
+```
+3. Reboot if error persist
+```
+sudo reboot
+```
