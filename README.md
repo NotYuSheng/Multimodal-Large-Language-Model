@@ -35,7 +35,7 @@ docker logs -f <container-id>
 <container-ip>:8501
 ```
 
-## Docker usage commands
+## Useful Docker commands
 List Docker containers
 ```
 docker ps -a
@@ -54,4 +54,14 @@ docker exec -it <container-id> /bin/bash
 Start docker container after host restart
 ```
 docker container start <container-id>
+```
+
+Delete all containers including its volumes use
+```
+docker rm -vf $(docker ps -aq)
+```
+
+Delete all images
+```
+docker rmi -f $(docker images -aq)
 ```
