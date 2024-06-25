@@ -16,7 +16,7 @@ if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
     echo "Pulling llava model..."
     ollama pull llava
 else
-    echo "-- Not first container startup --"
+    echo "-- Models already pulled --"
 fi
 
 # Check if the model was pulled successfully
