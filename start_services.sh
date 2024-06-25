@@ -8,9 +8,16 @@ ollama serve &
 echo "Waiting for Ollama service to start..."
 sleep 5
 
-# Pull the llava model
-echo "Pulling llava model..."
-ollama pull llava
+CONTAINER_ALREADY_STARTED="CONTAINER_ALREADY_STARTED_PLACEHOLDER"
+if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
+    touch $CONTAINER_ALREADY_STARTED
+    # Add new models here!
+    # Pull the llava model
+    echo "Pulling llava model..."
+    ollama pull llava
+else
+    echo "-- Not first container startup --"
+fi
 
 # Check if the model was pulled successfully
 if [ $? -eq 0 ]; then
