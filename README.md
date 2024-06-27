@@ -5,6 +5,8 @@
 | --- | --- | --- |
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
 
+Other models can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
+
 ## Host requirement(s)
 - **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
 
