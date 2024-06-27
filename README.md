@@ -29,12 +29,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-~~4.  Wait for model to pull (Wait for Streamlit app to start)~~
-```  
-docker logs -f <container-id>
-```
-
-5.  Access Streamlit webpage from host
+4.  Access Streamlit webpage from host
 ```
 localhost:8501
 ```
@@ -48,6 +43,11 @@ localhost:11434
 List Docker containers
 ```
 docker ps -a
+```
+
+Check containers log
+```
+docker-compose logs
 ```
 
 Check container build status
