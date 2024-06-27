@@ -26,6 +26,8 @@ COPY . .
 # Expose the port
 EXPOSE 8501
 
-# Make the script is executable and run
-RUN chmod +x /app/streamlit-service.sh \
-    && ./streamlit-service.sh
+# Make the script is executable
+RUN chmod +x /app/streamlit-service.sh 
+
+# Command to run the application
+ENTRYPOINT["/app/streamlit-service.sh"]
