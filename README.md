@@ -78,7 +78,7 @@ sudo usermod -aG docker $USER
 ```
 2. Verify docker can be ran
 ```
-docker
+docker ps -a
 ```
 3. Reboot if error persist
 ```
