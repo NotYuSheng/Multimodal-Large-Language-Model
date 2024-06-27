@@ -1,12 +1,14 @@
 # Multimodal-Large-Language-Model (MLLM)
 
-## Tested Models
+## Tested Model(s)
 | Model Name | Size | Link |
 | --- | --- | --- |
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
 
-## Host requirements
-**Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
+## Host requirement(s)
+- **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
+
+- Ensure port 8501 and 11434 is not in use.
 
 ## Usage
 1.  Clone this repository and navigate to project folder
@@ -15,24 +17,29 @@ git clone https://github.com/NotYuSheng/Multimodal-Large-Language-Model.git
 cd Multimodal-Large-Language-Model
 ```
 
-2.  Build the Docker Image:
+2.  Build the Docker images:
 ```
-docker build -t multimodal_app .
-```
-
-3.  Run image in detached mode
-```
-docker run -d multimodal_app tail -f /dev/null
+docker-compose build
 ```
 
-4.  Wait for model to pull (Wait for Streamlit app to start)
+3.  Run images
+```
+docker-compose up -d
+```
+
+~~4.  Wait for model to pull (Wait for Streamlit app to start)~~
 ```  
 docker logs -f <container-id>
 ```
 
 5.  Access Streamlit webpage from host
 ```
-<container-ip>:8501
+localhost:8501
+```
+
+API calls to Ollama server can be made on 
+```
+localhost:11434
 ```
 
 ## Useful Docker commands
@@ -68,9 +75,8 @@ docker rmi -f $(docker images -aq)
 
 ## Common Issue(s):
 ### Error: 
-```
-docker: Got permission denied while trying to connect to the Docker daemon socket at ...
-```
+> docker: Got permission denied while trying to connect to the Docker daemon socket at ...
+
 ### Solution:
 1. Add current user to docker group
 ```
