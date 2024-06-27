@@ -30,4 +30,4 @@ EXPOSE 8501
 RUN chmod +x /app/streamlit-service.sh 
 
 # Command to run the application
-ENTRYPOINT["/app/streamlit-service.sh"]
+ENTRYPOINT ["/app/streamlit-service.sh"]
