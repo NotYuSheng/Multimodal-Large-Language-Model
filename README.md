@@ -45,7 +45,7 @@ List Docker containers
 docker ps -a
 ```
 
-Check containers log
+Check container(s) log(s)
 ```
 docker-compose logs
 ```
