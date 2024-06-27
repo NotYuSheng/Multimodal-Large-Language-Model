@@ -1,5 +1,5 @@
-# Use the official Alpine image from the Docker Hub
-FROM ollama/ollama
+# Use the official Ollama image from the Docker Hub
+FROM ollama/ollama:0.1.46
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
@@ -17,6 +17,6 @@ COPY . .
 # Expose any necessary port
 EXPOSE 11434
 
-# Make the start script executable
+# Make the script is executable and run
 RUN chmod +x /app/ollama-service.sh \
     && ./ollama-service.sh
