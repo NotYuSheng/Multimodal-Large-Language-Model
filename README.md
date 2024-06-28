@@ -6,7 +6,7 @@
 ## Host requirement(s)
 - **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
 
-- Ensure port 8501 and 11434 is not in use.
+- Ensure port 8501 and 11434 is not in use
 
 ## Usage
 1.  Clone this repository and navigate to project folder
