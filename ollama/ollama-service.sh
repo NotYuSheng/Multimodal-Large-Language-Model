@@ -15,14 +15,14 @@ if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
     # Pull the llava model
     echo "Pulling llava model..."
     ollama pull llava
-else
-    echo "-- Models already pulled --"
-fi
 
-# Check if the model was pulled successfully
-if [ $? -eq 0 ]; then
-    echo "Successfully pulled llava model."
+    # Check if the model(s) were pulled successfully
+    if [ $? -eq 0 ]; then
+        echo "Successfully pulled all model(s)."
+    else
+        echo "Failed to pull one or more model(s)."
+        exit 1
+    fi
 else
-    echo "Failed to pull llava model."
-    exit 1
+    echo "-- Model(s) already pulled --"
 fi
