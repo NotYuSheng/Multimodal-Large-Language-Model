@@ -8,6 +8,19 @@
 
 - Ensure port 8501 and 11434 is not in use
 
+- Hardware Specification are dependant largely on the model used, LLaVA requires around 6 to 8 GB RAM to run
+
+- Project has only been configured to run and tested on NVIDIA GPU
+
+- Project will run on GPU by default but GPU is not neccesary, CPU will be used if GPU is not detected
+
+## Tested Model(s)
+| Model Name | Size | Link |
+| --- | --- | --- |
+| llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
+
+Other models can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
+
 ## Usage
 1.  Clone this repository and navigate to project folder
 ```
@@ -27,12 +40,12 @@ docker-compose up -d
 
 4.  Access Streamlit webpage from host
 ```
-localhost:8501
+<host-ip>:8501
 ```
 
 API calls to Ollama server can be made on 
 ```
-localhost:11434
+<host-ip>:11434
 ```
 
 ## Useful Docker commands
@@ -70,13 +83,6 @@ Delete all images
 ```
 docker rmi -f $(docker images -aq)
 ```
-
-## Tested Model(s)
-| Model Name | Size | Link |
-| --- | --- | --- |
-| llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
-
-Other models can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
 
 ## Common Issue(s):
 ### Error: 
