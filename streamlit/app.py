@@ -3,7 +3,6 @@ import streamlit as st
 import time
 import json
 import os
-import uuid
 import base64
 import io
 from PIL import Image
