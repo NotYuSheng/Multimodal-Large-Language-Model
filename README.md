@@ -1,11 +1,7 @@
 # Multimodal-Large-Language-Model (MLLM)
+*Localized multimodal large language model for interactive text and image processing tasks.*
 
-## Tested Model(s)
-| Model Name | Size | Link |
-| --- | --- | --- |
-| llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
-
-Other models can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
+[[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] Currently unavailable
 
 ## Host requirement(s)
 - **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
@@ -74,6 +70,13 @@ Delete all images
 ```
 docker rmi -f $(docker images -aq)
 ```
+
+## Tested Model(s)
+| Model Name | Size | Link |
+| --- | --- | --- |
+| llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
+
+Other models can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
 
 ## Common Issue(s):
 ### Error: 
