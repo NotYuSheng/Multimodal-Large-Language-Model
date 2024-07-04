@@ -4,7 +4,8 @@
 [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] Currently unavailable
 
 ## Host requirement(s)
-- **Docker**: [Installation Guide](https://docs.docker.com/engine/install/)
+- **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
+- **Docker Compose**: [[InstallationGuide](https://docs.docker.com/compose/install/)]
 
 - Ensure port 8501 and 11434 is not in use
 
