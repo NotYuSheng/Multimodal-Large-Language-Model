@@ -15,6 +15,15 @@
 
 - Project will run on GPU by default but GPU is not neccesary, CPU will be used if GPU is not detected
 
+- Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
+>     deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
 ## Tested Model(s)
 | Model Name | Size | Link |
 | --- | --- | --- |
