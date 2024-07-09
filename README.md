@@ -11,20 +11,21 @@
 - Hardware Specification are dependant largely on the model used, LLaVA requires around 6 to 8 GB RAM to run
 - Project has only been configured to run and tested on NVIDIA GPU
 - Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
->      deploy:
->        resources:
->          reservations:
->            devices:
->              - driver: nvidia
->                count: all
->                capabilities: [gpu]
+
+>     deploy:
+>       resources:
+>         reservations:
+>           devices:
+>             - driver: nvidia
+>               count: all
+>               capabilities: [gpu]
 
 ## Tested Model(s)
 | Model Name | Size | Link |
 | --- | --- | --- |
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
 
-Other models can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
+Other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
 
 ## Usage
 1.  Clone this repository and navigate to project folder
