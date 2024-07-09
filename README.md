@@ -7,22 +7,21 @@
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
 - **Docker Compose**: [[InstallationGuide](https://docs.docker.com/compose/install/)]
 
-- Ensure port 8501 and 11434 is not in use
+- Ensure port 8501 and 11434 is not already in use
 
 - Hardware Specification are dependant largely on the model used, LLaVA requires around 6 to 8 GB RAM to run
 
 - Project has only been configured to run and tested on NVIDIA GPU
 
-- Project will run on GPU by default but GPU is not neccesary, CPU will be used if GPU is not detected
-
 - Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
->     deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+
+>      deploy:
+>        resources:
+>          reservations:
+>            devices:
+>              - driver: nvidia
+>                count: all
+>                capabilities: [gpu]
 
 ## Tested Model(s)
 | Model Name | Size | Link |
