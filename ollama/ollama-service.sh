@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Start the Ollama service in the background
 echo "Starting Ollama service..."
