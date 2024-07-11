@@ -80,7 +80,7 @@ Start docker container after host restart
 docker container start <container-id>
 ```
 
-Delete all containers including its volumes use
+Delete all container(s) including its volume(s) use
 ```
 docker rm -vf $(docker ps -aq)
 ```
