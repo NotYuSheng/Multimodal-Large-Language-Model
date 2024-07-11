@@ -54,7 +54,7 @@ API calls to Ollama server can be made on
 <host-ip>:11434
 ```
 
-## Useful Docker commands
+## Useful Docker command(s)
 List Docker containers
 ```
 docker ps -a
@@ -85,7 +85,7 @@ Delete all containers including its volumes use
 docker rm -vf $(docker ps -aq)
 ```
 
-Delete all images
+Delete all image(s)
 ```
 docker rmi -f $(docker images -aq)
 ```
