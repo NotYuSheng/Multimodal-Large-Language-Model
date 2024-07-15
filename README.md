@@ -56,42 +56,6 @@ API calls to Ollama server can be made on
 <host-ip>:11434
 ```
 
-## Useful Docker commands
-List Docker container(s)
-```
-docker ps -a
-```
-
-Check container(s) log(s)
-```
-docker-compose logs
-```
-
-Check container build status
-```
-docker logs <container-id>
-```
-
-Get interactive shell after container has started
-```
-docker exec -it <container-id> /bin/bash
-```
-
-Start docker container after host restart
-```
-docker container start <container-id>
-```
-
-Delete all container(s) including its volume(s) use
-```
-docker rm -vf $(docker ps -aq)
-```
-
-Delete all image(s)
-```
-docker rmi -f $(docker images -aq)
-```
-
 ## Common Issue(s):
 ### Error: 
 > docker: Got permission denied while trying to connect to the Docker daemon socket at ...
