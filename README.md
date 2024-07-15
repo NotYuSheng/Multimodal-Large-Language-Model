@@ -1,5 +1,5 @@
 # Multimodal-Large-Language-Model (MLLM)
-*Localized multimodal large language model for interactive text and image processing tasks.*
+*Localized multimodal large language model for text and image processing tasks.*
 
 [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] Currently unavailable
 
