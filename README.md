@@ -5,7 +5,8 @@
 
 ## Host requirement(s)
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
-- **Docker Compose**: [[InstallationGuide](https://docs.docker.com/compose/install/)]
+- **Docker Compose**: [[Installation Guide](https://docs.docker.com/compose/install/)]
+- **NVIDIA Container Toolkit** [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
 - Built with Docker on a **Linux** host, issues may occur when containers are built with Windows or macOS
 - Ensure port 8501 and 11434 is not already in use
 - Hardware Specification are dependant largely on the model used, LLaVA requires around 6 to 8 GB RAM to run
