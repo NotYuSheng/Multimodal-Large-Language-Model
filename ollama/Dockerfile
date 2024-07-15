@@ -1,5 +1,5 @@
 # Use the official Ollama image from the Docker Hub
-FROM ollama/ollama:0.1.46
+FROM ollama/ollama:0.2.5
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
