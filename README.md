@@ -55,21 +55,3 @@ API calls to Ollama server can be made on
 ```
 <host-ip>:11434
 ```
-
-## Common Issue(s):
-### Error: 
-> docker: Got permission denied while trying to connect to the Docker daemon socket at ...
-
-### Solution:
-1. Add current user to docker group
-```
-sudo usermod -aG docker $USER
-```
-2. Verify docker can be ran
-```
-docker ps -a
-```
-3. Reboot if error persist
-```
-sudo reboot
-```
