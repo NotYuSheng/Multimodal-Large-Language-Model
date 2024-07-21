@@ -15,6 +15,7 @@ WORKDIR /app
 COPY . .
 
 # Expose any necessary port
+EXPOSE 5000
 EXPOSE 11434
 
 # Make the script is executable and run
