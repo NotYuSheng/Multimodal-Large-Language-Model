@@ -1,7 +1,7 @@
 # Multimodal-Large-Language-Model (MLLM)
 *Localized multimodal large language model for text and image processing tasks.*
 
-[[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] Currently unavailable
+<!-- [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] -->
 
 ## Host requirement(s)
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
