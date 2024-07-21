@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
 
-Other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-service.sh](ollama/ollama-service.sh)
+Other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-build.sh](ollama/ollama-build.sh)
 
 ## Usage
 Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
