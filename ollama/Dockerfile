@@ -26,6 +26,12 @@ COPY . .
 EXPOSE 5000
 EXPOSE 11434
 
-# Make the script is executable and run
-RUN chmod +x /app/ollama-service.sh \
-    && ./ollama-service.sh
+# Make the scripts executable
+RUN chmod +x /app/ollama-build.sh
+RUN chmod +x /app/ollama-startup.sh
+
+# Run build sh script
+RUN ./ollama-build.sh
+
+# Run script when the container launches
+ENTRYPOINT ["/app/ollama-startup.sh"]
