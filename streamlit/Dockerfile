@@ -26,8 +26,6 @@ COPY . .
 # Expose the port
 EXPOSE 8501
 
-# Make the script is executable
-RUN chmod +x /app/streamlit-service.sh 
+# Run the Streamlit application
+CMD ["streamlit", "run", "/app/app.py", "--server.enableCORS", "false", "--server.enableXsrfProtection", "false", "--browser.gatherUsageStats", "false"]
 
-# Command to run the application
-ENTRYPOINT ["/app/streamlit-service.sh"]
