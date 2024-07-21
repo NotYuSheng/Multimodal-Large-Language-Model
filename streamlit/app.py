@@ -8,7 +8,7 @@ import io
 from PIL import Image
 
 # Ollama server address
-url = "http://ollama:11434/api/generate"
+url = "http://ollama:5000/api/generate"
 
 st.set_page_config(page_title="Multimodal AI Assistant")
 
