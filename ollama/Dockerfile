@@ -6,17 +6,32 @@ RUN apt-get update && apt-get install -y \
     pciutils \
     curl \
     nano \
+    python3 \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
 WORKDIR /app
 
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install any dependencies specified in requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
+
 # Copy the rest of the application code into the container
 COPY . .
 
 # Expose any necessary port
+EXPOSE 5000
 EXPOSE 11434
 
-# Make the script is executable and run
-RUN chmod +x /app/ollama-service.sh \
-    && ./ollama-service.sh
+# Make the scripts executable
+RUN chmod +x /app/ollama-build.sh
+RUN chmod +x /app/ollama-startup.sh
+
+# Run build sh script
+RUN ./ollama-build.sh
+
+# Run script when the container launches
+ENTRYPOINT ["/app/ollama-startup.sh"]
