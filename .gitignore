@@ -1,2 +1,9 @@
-ollama/logs/
+# Ignore all __pycache__ directories and their contents
+__pycache__/
+
+# Ignore all .pyc files
+*.pyc
+
+# Ignore log files
+logs/
 *.log
