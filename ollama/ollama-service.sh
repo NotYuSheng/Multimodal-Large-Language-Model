@@ -29,4 +29,6 @@ fi
 
 # Run the proxy server
 echo "Starting the proxy server..."
-python3 proxy-server.py &
+python3 /app/proxy-server.py &
+
+echo "Startup complete"
