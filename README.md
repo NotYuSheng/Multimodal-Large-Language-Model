@@ -9,7 +9,7 @@
 - **NVIDIA Container Toolkit** [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
 - Built with Docker on a **Linux** host, issues may occur when containers are built with Windows or macOS
 - Ensure port 5000, 8501, and 11434 is not already in use
-- Hardware Specification are dependant largely on the model used, LLaVA requires around 6 to 8 GB RAM to run
+- You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.
 - Project can be ran on either CPU or GPU
 
 ## Tested Model(s)
