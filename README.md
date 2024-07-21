@@ -48,15 +48,15 @@ docker-compose up -d
 
 4.  Access Streamlit webpage from host
 ```
-<host-ip>:8501
+localhost:8501
 ```
 
 API calls to Ollama server can be made to
 ```
-<host-ip>:5000
+localhost:5000
 ```
 
 API calls to Ollama server made to 11434 will not be logged
 ```
-<host-ip>:11434
+localhost:11434
 ```
