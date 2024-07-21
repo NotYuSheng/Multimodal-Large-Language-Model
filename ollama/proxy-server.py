@@ -5,10 +5,17 @@ import datetime
 import logging
 
 app = Flask(__name__)
-OLLAMA_SERVER_URL = "http://ollama:11434/api/generate"
+OLLAMA_SERVER_URL = "http://127.0.0.1:11434/api/generate"
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Configure logging to log to a file
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("server.log"),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
 def log_conversation(data):
