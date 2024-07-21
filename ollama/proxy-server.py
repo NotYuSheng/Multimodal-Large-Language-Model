@@ -1,9 +1,18 @@
 from mitmproxy import http, ctx
 import logging
 from logging.handlers import RotatingFileHandler
+from datetime import datetime
+import os
+
+# Create 'logs' directory if it doesn't exist
+os.makedirs('logs', exist_ok=True)
+
+# Generate log filename with current date
+date_str = datetime.now().strftime("%Y%m%d")
+log_filename = f"logs/ollama_traffic_{date_str}.log"
 
 # Configure logging with rotation
-handler = RotatingFileHandler('ollama_traffic.log', maxBytes=50*1024*1024, backupCount=5)  # 50 MB per file, 5 backups
+handler = RotatingFileHandler(log_filename, maxBytes=50*1024*1024, backupCount=5)  # 50 MB per file, 5 backups
 logging.basicConfig(handlers=[handler], level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class MITMProxy:
@@ -21,7 +30,7 @@ class MITMProxy:
         else:
             # Log the full request payload
             logging.info(f"Request: {flow.request.method} {flow.request.url} {request_payload.decode('utf-8', 'ignore')}")
-
+        
         # Forward request to the target server
         flow.request.host = self.target_host
         flow.request.port = self.target_port
