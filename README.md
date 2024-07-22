@@ -16,6 +16,7 @@
 | Model Name | Size | Link |
 | --- | --- | --- |
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
+| llava:34b | 20GB | [Link](https://www.ollama.com/library/llava:34b) |
 
 Other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-build.sh](ollama/ollama-build.sh)
 
