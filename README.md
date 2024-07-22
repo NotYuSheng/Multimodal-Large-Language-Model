@@ -1,5 +1,8 @@
 # Multimodal-Large-Language-Model (MLLM)
-*Localized multimodal large language model for text and image processing tasks.*
+
+Thank you for checking out the Multimodal-Large-Language-Model project. Please note that this project was created for research purposes.
+
+For a more robust and well-developed solution, we recommend using [open-webui/open-webui](https://github.com/open-webui/open-webui).
 
 <!-- [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] -->
 
