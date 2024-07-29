@@ -61,10 +61,5 @@ docker-compose up -d
 
 API calls to Ollama server can be made to
 ```
-<host-ip>:5000
-```
-
-API calls to Ollama server made to 11434 will be anonymous
-```
 <host-ip>:11434
 ```
