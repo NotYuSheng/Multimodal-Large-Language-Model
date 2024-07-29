@@ -6,6 +6,10 @@ For a more robust and well-developed solution, we recommend using [open-webui/op
 
 <!-- [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] -->
 
+<div align="center">
+  <img src="sample-img/DEMO.png" alt="Demo image" />
+</div>
+
 ## Host requirement(s)
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
 - **Docker Compose**: [[Installation Guide](https://docs.docker.com/compose/install/)]
