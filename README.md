@@ -7,7 +7,7 @@ For a more robust and well-developed solution, we recommend using [open-webui/op
 <!-- [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] -->
 
 <div align="center">
-  <img src="sample-img/DEMO.png" alt="Demo image" />
+  <img src="sample-img/ducky-DEMO.png" alt="Demo image" />
 </div>
 
 ## Host requirement(s)
