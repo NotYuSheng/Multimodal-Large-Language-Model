@@ -2,7 +2,7 @@
 
 Thank you for checking out the Multimodal-Large-Language-Model project. Please note that this project was created for research purposes.
 
-For a more robust and well-developed solution, we recommend using [open-webui/open-webui](https://github.com/open-webui/open-webui).
+For a more robust and well-developed solution, you may consider using [open-webui/open-webui](https://github.com/open-webui/open-webui).
 
 <!-- [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] -->
 
