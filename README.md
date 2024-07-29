@@ -7,7 +7,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 <!-- [[🤗Space DEMO](https://huggingface.co/spaces/NotYuSheng/MMLLM)] -->
 
 <div align="center">
-  <img src="sample-img/ducky-DEMO.png" alt="Demo image" />
+  <img src="sample-img/LHC-DEMO.png" alt="Demo image" />
 </div>
 
 ## Host requirements
