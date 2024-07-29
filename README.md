@@ -10,7 +10,7 @@ For a more robust and well-developed solution, we recommend using [open-webui/op
   <img src="sample-img/ducky-DEMO.png" alt="Demo image" />
 </div>
 
-## Host requirement(s)
+## Host requirements
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
 - **Docker Compose**: [[Installation Guide](https://docs.docker.com/compose/install/)]
 - **NVIDIA Container Toolkit** [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
