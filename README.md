@@ -15,7 +15,7 @@ For a more robust and well-developed solution, we recommend using [open-webui/op
 - **Docker Compose**: [[Installation Guide](https://docs.docker.com/compose/install/)]
 - **NVIDIA Container Toolkit** [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
 - Built with Docker on a **Linux** host, issues may occur when containers are built with Windows or macOS
-- Ensure port 5000, 8501, and 11434 is not already in use
+- Ensure port 8501 and 11434 is not already in use
 - You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.
 - Project can be ran on either CPU or GPU
 
