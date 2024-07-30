@@ -13,7 +13,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 ## Host requirements
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
 - **Docker Compose**: [[Installation Guide](https://docs.docker.com/compose/install/)]
-- **NVIDIA Container Toolkit** [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
+- **NVIDIA Container Toolkit** (only needed if running on GPU) [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
 - Built with Docker on a **Linux** host, issues may occur when containers are built with Windows or macOS
 - Ensure port 8501 and 11434 is not already in use
 - You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models. [[Source](https://github.com/ollama/ollama)]
