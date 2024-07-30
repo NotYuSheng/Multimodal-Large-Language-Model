@@ -25,7 +25,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 | llava:7b | 4.7GB | [Link](https://www.ollama.com/library/llava:7b) |
 | llava:34b | 20GB | [Link](https://www.ollama.com/library/llava:34b) |
 
-Other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-build.sh](ollama/ollama-build.sh)
+Llava is pulled and loaded by default, other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-build.sh](ollama/ollama-build.sh)
 
 ## Usage
 Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
