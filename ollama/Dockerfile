@@ -30,6 +30,9 @@ EXPOSE 11434
 RUN chmod +x /app/ollama-build.sh
 RUN chmod +x /app/ollama-startup.sh
 
+# Run the EOL conversion script
+RUN python3 /app/convert_eol.py
+
 # Run build sh script
 RUN ./ollama-build.sh
 
