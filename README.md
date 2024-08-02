@@ -1,5 +1,8 @@
 # Multimodal-Large-Language-Model (MLLM)
 
+<!-- ![GitHub repo size](https://img.shields.io/github/repo-size/NotYuSheng/Multimodal-Large-Language-Model) -->
+![GitHub last commit](https://img.shields.io/github/last-commit/NotYuSheng/Multimodal-Large-Language-Model?color=red)
+
 Thank you for checking out the Multimodal-Large-Language-Model project. Please note that this project was created for research purposes.
 
 For a more robust and well-developed solution, you may consider using [open-webui/open-webui](https://github.com/open-webui/open-webui).
