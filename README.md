@@ -32,7 +32,7 @@ Llava is pulled and loaded by default, other models from [Ollama](https://www.ol
 
 ## Usage
 > [!NOTE] 
-Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
+Project will run on GPU by default. To run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
 
 >     deploy:
 >       resources:
