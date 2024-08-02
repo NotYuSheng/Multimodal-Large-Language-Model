@@ -31,6 +31,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 Llava is pulled and loaded by default, other models from [Ollama](https://www.ollama.com/library) can be added into [ollama/ollama-build.sh](ollama/ollama-build.sh)
 
 ## Usage
+> [!NOTE] 
 Project will run on GPU by default, to run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
 
 >     deploy:
