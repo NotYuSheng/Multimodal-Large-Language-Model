@@ -23,7 +23,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose any necessary port
-EXPOSE 5000
 EXPOSE 11434
 
 # Make the scripts executable
