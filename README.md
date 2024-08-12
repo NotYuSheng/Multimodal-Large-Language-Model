@@ -23,6 +23,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 ### Running on GPU
 - **NVIDIA Container Toolkit** (Linux) [[Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)]
 - **NVIDIA CUDA Toolkit** (Windows) [[Installation](https://developer.nvidia.com/cuda-downloads)]
+- **WSL** (Windows) [[Installation](https://docs.docker.com/desktop/gpu/)]
 
 ## Tested Model(s)
 | Model Name | Size | Link |
