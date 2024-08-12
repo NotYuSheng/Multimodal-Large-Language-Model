@@ -45,6 +45,9 @@ Project will run on GPU by default. To run on CPU, remove the following lines fr
 >               count: all
 >               capabilities: [gpu]
 
+> [!IMPORTANT]  
+> If running on Windows with GPU, run commands from WSL terminal
+
 1.  Clone this repository and navigate to project folder
 ```
 git clone https://github.com/NotYuSheng/Multimodal-Large-Language-Model.git
