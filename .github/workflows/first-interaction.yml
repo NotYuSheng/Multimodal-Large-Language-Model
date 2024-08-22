@@ -20,16 +20,3 @@ jobs:
           issue-message: "Thanks for opening your first issue! We appreciate your contribution."
           pr-message: "Thanks for submitting your first pull request! We value your effort."
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: first-interaction
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
