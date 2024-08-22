@@ -7,3 +7,6 @@ __pycache__/
 # Ignore log files
 logs/
 *.log
+
+# Ignore the directory where Docker mounts volume data
+ollama/ollama_volume/
