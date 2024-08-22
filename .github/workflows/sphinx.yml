@@ -36,7 +36,7 @@ jobs:
         git clone --branch=gh-pages https://github.com/${{ github.repository }} gh-pages || git clone https://github.com/${{ github.repository }} gh-pages
         cd gh-pages
         cp -r ../docs/build/* .  # Copy built documentation to gh-pages branch
-        git config user.email "your-email@example.com"
+        git config user.email "notyusheng@gmail.com"
         git config user.name "GitHub Actions"
         git add .
         git commit -m "Update Sphinx documentation"
