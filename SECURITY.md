@@ -2,9 +2,6 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.1.x   | :white_check_mark: |
@@ -30,4 +27,3 @@ To report a security vulnerability in the Localized Multimodal Large Language Mo
 
 We appreciate contributions from the community in helping us improve the security of our project. We will acknowledge contributors in our release notes or security advisories as appropriate.
 Thank you for helping us maintain the security of our project.
-
