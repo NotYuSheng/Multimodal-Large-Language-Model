@@ -1,15 +1,6 @@
 """MITM Proxy Server Module."""
 
-import subprocess
 import sys
-
-# Check if mitmproxy is installed, and install it if not
-try:
-    import mitmproxy
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "mitmproxy"])
-    import mitmproxy
-
 import logging
 from logging.handlers import RotatingFileHandler
 from datetime import datetime
