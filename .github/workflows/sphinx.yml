@@ -14,6 +14,21 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Cache Python dependencies
+      uses: actions/cache@v4.0.2
+      with:
+        path: |
+          ~/.cache/pip
+        key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-python-
+          ${{ runner.os }}-
+        upload-chunk-size: 1000  # Optional
+        enableCrossOsArchive: true  # Optional
+        fail-on-cache-miss: false  # Optional
+        lookup-only: false  # Optional
+        save-always: true  # Optional
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
