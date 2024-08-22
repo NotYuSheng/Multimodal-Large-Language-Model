@@ -5,9 +5,6 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
-  push:
-    branches:
-      - main
 
 jobs:
   first-interaction:
