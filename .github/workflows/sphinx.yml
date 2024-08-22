@@ -37,7 +37,7 @@ jobs:
         cd gh-pages
         cp -r ../docs/build/* .  # Copy built documentation to gh-pages branch
         git config user.email "notyusheng@gmail.com"
-        git config user.name "GitHub Actions"
+        git config user.name "NotYuSheng"
         git add .
         git commit -m "Update Sphinx documentation"
         git push origin gh-pages
