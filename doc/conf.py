@@ -6,10 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Example'
-copyright = 'workshop participant'
-author = 'workshop participant'
-release = '0.1'
+project = 'Multimodal-Large-Language-Model'
+copyright = '2024'
+author = 'Yu Sheng'
+release = '1.1.0'
 
 
 # -- General configuration ---------------------------------------------------
