@@ -31,8 +31,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "your-username"
+          git config --global user.email "notyusheng@gmail.com"
+          git config --global user.name "notyusheng"
           git clone --branch=gh-pages https://${{ secrets.GITHUB_TOKEN }}@github.com/NotYuSheng/Multimodal-Large-Language-Model.git gh-pages
           cd gh-pages
           cp -r ../docs/_build/html/* .  # Copy the built docs to the gh-pages branch
