@@ -31,17 +31,13 @@ jobs:
 
     - name: Deploy documentation
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git clone --branch=gh-pages https://github.com/${{ github.repository }} gh-pages || git clone https://github.com/${{ github.repository }} gh-pages
+        git clone --branch=gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages || git clone https://github.com/${{ github.repository }} gh-pages
         cd gh-pages
-        cp -r ../docs/build/* .  # Copy built documentation to gh-pages branch
+        cp -r ../docs/build/* .
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
         git add .
-        if git diff --cached --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update Sphinx documentation"
-          git push origin gh-pages
-        fi
+        git commit -m "Update Sphinx documentation"
+        git push origin gh-pages
