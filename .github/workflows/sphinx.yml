@@ -39,5 +39,9 @@ jobs:
         git config user.email "notyusheng@gmail.com"
         git config user.name "NotYuSheng"
         git add .
-        git commit -m "Update Sphinx documentation"
-        git push origin gh-pages
+        if git diff --cached --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update Sphinx documentation"
+          git push origin gh-pages
+        fi
