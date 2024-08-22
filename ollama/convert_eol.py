@@ -1,9 +1,9 @@
-import os
-
 """
 This module contains a function to convert the end-of-line (EOL) characters in a file
 to the appropriate format based on the operating system.
 """
+
+import os
 
 def convert_eol(file_path):
     """
