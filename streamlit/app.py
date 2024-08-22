@@ -1,14 +1,17 @@
-import requests
-import streamlit as st
-import time
+"""
+Streamlit application for Multimodal AI Assistant.
+This app allows users to interact with an AI assistant by providing text and image inputs.
+"""
+
 import json
-import os
 import base64
 import io
 from PIL import Image
+import requests
+import streamlit as st
 
 # Ollama server address
-url = "http://ollama:11434/api/generate"
+URL = "http://ollama:11434/api/generate"
 
 st.set_page_config(page_title="Multimodal AI Assistant")
 
@@ -18,7 +21,7 @@ st.title("💬 Multimodal AI Assistant")
 # Image upload field
 uploaded_file = st.sidebar.file_uploader("Upload image :gear:", type=["jpg", "png", "jpeg"])
 if uploaded_file is not None:
-    st.sidebar.image(uploaded_file, use_column_width = True, caption='Uploaded image')
+    st.sidebar.image(uploaded_file, use_column_width=True, caption='Uploaded image')
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -51,7 +54,7 @@ if prompt:
 
     # If an image is uploaded, encode it to base64 and include it in the payload
     if uploaded_file is not None:
-         # Open the image using PIL
+        # Open the image using PIL
         image = Image.open(uploaded_file)
 
         # Convert the image to a base64 string
@@ -63,9 +66,8 @@ if prompt:
         payload["images"] = [img_str]
 
     # Send the POST request
-    response = requests.post(url, json=payload, stream=True)
+    response = requests.post(URL, json=payload, stream=True)
 
-    #response_time = 0
     chat_response = ""
     # Check if the request was successful
     if response.status_code == 200:
@@ -74,7 +76,7 @@ if prompt:
                 decoded_line = line.decode('utf-8')
                 response_part = json.loads(decoded_line)
                 chat_response = response_part['response']
-                total_duration = round(response_part['total_duration'] / 10 **9, 2)
+                total_duration = round(response_part['total_duration'] / 10 ** 9, 2)
                 st.session_state['context'] = response_part['context']
 
                 # Display assistant response in chat message container
