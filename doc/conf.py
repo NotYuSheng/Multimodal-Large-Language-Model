@@ -26,3 +26,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+# Add the GitHub URL for the "Edit on GitHub" button
+html_theme_options = {
+    'github_url': 'https://github.com/NotYuSheng/Multimodal-Large-Language-Model',
+}
