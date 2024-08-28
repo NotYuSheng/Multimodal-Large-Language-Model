@@ -41,18 +41,10 @@ Llava is pulled and loaded by default, other models from [Ollama](https://www.ol
 
 ## Usage
 > [!NOTE] 
-Project will run on GPU by default. To run on CPU, remove the following lines from the [docker-compose.yml](docker-compose.yml).
-
->     deploy:
->       resources:
->         reservations:
->           devices:
->             - driver: nvidia
->               count: all
->               capabilities: [gpu]
+Project will run on GPU by default. To run on CPU, use the `docker-compose.cpu.yml` instead.
 
 > [!IMPORTANT]  
-> If running on Windows with GPU, run commands from WSL terminal
+> If running on Windows with GPU, run commands from WSL terminal to avoid volume mounting issues
 
 1.  Clone this repository and navigate to project folder
 ```
