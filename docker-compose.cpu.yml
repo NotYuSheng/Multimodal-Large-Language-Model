@@ -1,0 +1,30 @@
+services:
+  streamlit_app:
+    build:
+      context: ./streamlit
+      dockerfile: Dockerfile
+    container_name: streamlit_app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - ollama
+
+  ollama:
+    build:
+      context: ./ollama
+      dockerfile: Dockerfile
+    container_name: ollama
+    ports:
+      - "11434:5000"
+    volumes:
+      - ollama_volume:/root/.ollama
+    environment:
+      # Model(s) will be loaded to GPU as long as server is active.
+      # If removed, models will be kept alive for 5 mins after activity by default
+      - OLLAMA_KEEP_ALIVE=-1
+volumes:
+  ollama_volume:
