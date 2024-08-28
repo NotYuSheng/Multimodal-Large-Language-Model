@@ -16,7 +16,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 </div>
 
 ## Documentation
-You can access the project documentation at [GitHub Pages](https://notyusheng.github.io/Multimodal-Large-Language-Model/). Please note that the documentation is a work in progress.
+You can access the project documentation at [[GitHub Pages](https://notyusheng.github.io/Multimodal-Large-Language-Model/)]. Please note that the documentation is a work in progress.
 
 ## Host requirements
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
