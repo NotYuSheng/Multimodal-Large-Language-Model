@@ -68,7 +68,6 @@ if prompt:
     # Send the POST request
     response = requests.post(URL, json=payload, stream=True)
 
-    chat_response = ""
     # Check if the request was successful
     if response.status_code == 200:
         for line in response.iter_lines():
