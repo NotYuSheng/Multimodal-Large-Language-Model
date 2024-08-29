@@ -14,3 +14,4 @@ Features
 
 .. image:: images/network-diagram.png
    :alt: Network diagram
+   :align: center
