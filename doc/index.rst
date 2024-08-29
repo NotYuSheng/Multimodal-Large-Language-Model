@@ -14,7 +14,7 @@ Contents:
 
    introduction
    host_requirements
-   usage
+   installation
    project_features
    shortcomings
 
