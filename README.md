@@ -16,7 +16,7 @@ For a more robust and well-developed solution, you may consider using [open-webu
 </div>
 
 ## Documentation
-You can access the project documentation at [[GitHub Pages](https://notyusheng.github.io/Multimodal-Large-Language-Model/)]. Please note that the documentation is a work in progress.
+You can access the project documentation at [[GitHub Pages](https://notyusheng.github.io/Multimodal-Large-Language-Model/)].
 
 ## Host requirements
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
@@ -41,7 +41,7 @@ Llava is pulled and loaded by default, other models from [Ollama](https://www.ol
 
 ## Usage
 > [!NOTE] 
-Project will run on GPU by default. To run on CPU, use the `docker-compose.cpu.yml` instead.
+Project will run on GPU by default. To run on CPU, use the `docker-compose.cpu.yml` instead
 
 > [!IMPORTANT]  
 > If running on Windows with GPU, run commands from WSL terminal to avoid volume mounting issues
