@@ -3,7 +3,7 @@ Host Requirements
 
 - **Docker**: `Installation Guide <https://docs.docker.com/engine/install/>`_
 - **Docker Compose**: `Installation Guide <https://docs.docker.com/compose/install/>`_
-- Compatible with Linux, Windows, and MacOS Host
+- Compatible with Linux and Windows Host
 - Ensure port 8501 and 11434 are not already in use
 - At least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models. `Source <https://github.com/ollama/ollama>`_
 - Project can be run on either CPU or GPU
