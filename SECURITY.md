@@ -13,7 +13,7 @@ To report a security vulnerability in the Localized Multimodal Large Language Mo
 
 1. Submit a Report:
 
-- Send an email to ~~security@example.com~~ (please don't email me) with details about the vulnerability. Include as much information as possible, such as the version of the software affected, steps to reproduce the issue, and any other relevant details.
+- Send an email to ongusong@gmail.com with details about the vulnerability. Include as much information as possible, such as the version of the software affected, steps to reproduce the issue, and any other relevant details.
 2. Response Time:
 
 - Upon receiving your report, we will acknowledge receipt within 48 hours. We will provide an initial response with an update on the status of your report and any additional information needed within 7 days.
