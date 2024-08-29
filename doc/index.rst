@@ -1,10 +1,11 @@
 Welcome to the Multimodal Large Language Model (MLLM) Documentation
 ====================================================================
 
-.. warning::
-   This documentation is still a work in progress. Some sections may be incomplete or subject to change.
-
 This documentation provides an overview of the Multimodal Large Language Model project, including setup, usage, and requirements.
+
+Thank you for checking out the Multimodal-Large-Language-Model project. Please note that this project was created for research purposes.
+
+For a more robust and well-developed solution, you may consider using `open-webui <https://github.com/open-webui/open-webui>`_ with `ollama <https://github.com/ollama/ollama>`_.
 
 Contents:
 ----------
