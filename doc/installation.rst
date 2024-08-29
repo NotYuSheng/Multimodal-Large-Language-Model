@@ -2,18 +2,8 @@ Installation
 =====
 
 .. note::
-   
-   Project will run on GPU by default. To run on CPU, remove the following lines from the :file:`docker-compose.yml`:
 
-   .. code-block:: yaml
-
-       deploy:
-         resources:
-           reservations:
-             devices:
-               - driver: nvidia
-                 count: all
-                 capabilities: [gpu]
+   Project will run on GPU by default. To run on CPU, use the `docker-compose.cpu.yml` instead.
 
 .. important::
    
