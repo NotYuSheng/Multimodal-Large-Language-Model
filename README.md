@@ -21,7 +21,7 @@ You can access the project documentation at [[GitHub Pages](https://notyusheng.g
 ## Host requirements
 - **Docker**: [[Installation Guide](https://docs.docker.com/engine/install/)]
 - **Docker Compose**: [[Installation Guide](https://docs.docker.com/compose/install/)]
-- Compatibile with Linux, Windows, and MacOS Host
+- Compatibile with Linux and Windows Host
 - Ensure port 8501 and 11434 is not already in use
 - You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models. [[Source](https://github.com/ollama/ollama)]
 - Project can be ran on either CPU or GPU
