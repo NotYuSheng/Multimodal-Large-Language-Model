@@ -17,10 +17,3 @@ Contents:
    installation
    project_features
    shortcomings
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
