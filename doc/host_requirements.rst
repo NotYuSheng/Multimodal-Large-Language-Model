@@ -30,4 +30,4 @@ Tested Model(s)
      - 20GB
      - `Link <https://www.ollama.com/library/llava:34b>`_
 
-Llava is pulled and loaded by default, other models from `Ollama <https://www.ollama.com/library>`_ can be added into `ollama/ollama-build.sh`.
+Llava is pulled and loaded by default, other models from `Ollama <https://www.ollama.com/library>`_ can be added into ``ollama/ollama-build.sh``.
