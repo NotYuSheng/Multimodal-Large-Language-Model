@@ -1,15 +1,15 @@
 Shortcomings
 ============
 
-1.3 Limitations
+Limitations
 ---------------
 
-1.3.1 Multimodal Capabilities
+Multimodal Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 During the development of this project, there were limited robust open-source pre-trained models available with video (both visual and audio) capabilities. Consequently, the project has been constrained to accepting only image and text inputs.
 
-1.3.2 Ollama Limitations
+Ollama Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using Ollama restricts the project to models compatible with its platform, which limits the range of models deployable in the system.
