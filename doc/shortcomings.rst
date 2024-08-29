@@ -1,9 +1,6 @@
 Shortcomings
 ============
 
-Limitations
----------------
-
 Multimodal Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
