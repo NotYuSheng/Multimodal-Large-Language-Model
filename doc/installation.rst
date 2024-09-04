@@ -5,10 +5,6 @@ Installation
 
    Project will run on GPU by default. To run on CPU, use the ``docker-compose.cpu.yml`` instead.
 
-.. important::
-   
-   If running on Windows with GPU, run commands from the WSL terminal.
-
 1. Clone this repository and navigate to the project folder:
 
    .. code-block:: bash
