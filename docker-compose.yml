@@ -21,7 +21,7 @@ services:
     ports:
       - "11434:5000"
     volumes:
-      - ollama_volume:/root/.ollama
+      - ./ollama_volume:/root/.ollama
     environment:
       # Model(s) will be loaded to GPU as long as server is active.
       # If removed, models will be kept alive for 5 mins after activity by default
@@ -33,5 +33,3 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
-volumes:
-  ollama_volume:
