@@ -1,7 +1,7 @@
 # Multimodal-Large-Language-Model (MLLM)
 
 <!-- ![GitHub repo size](https://img.shields.io/github/repo-size/NotYuSheng/Multimodal-Large-Language-Model) -->
-![GitHub last commit](https://img.shields.io/github/last-commit/NotYuSheng/Multimodal-Large-Language-Model?color=red)
+[![GitHub last commit](https://img.shields.io/github/last-commit/NotYuSheng/Multimodal-Large-Language-Model?color=red)](#)
 [![Sphinx](https://img.shields.io/badge/Sphinx-000?logo=sphinx&logoColor=fff)](https://notyusheng.github.io/Multimodal-Large-Language-Model/index.html)
 
 Thank you for checking out the Multimodal-Large-Language-Model project. Please note that this project was created for research purposes.
