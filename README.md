@@ -50,12 +50,12 @@ cd Multimodal-Large-Language-Model
 
 2.  Build the Docker images:
 ```
-docker-compose build
+docker compose build
 ```
 
 3.  Run images
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 4.  Access Streamlit webpage from host
