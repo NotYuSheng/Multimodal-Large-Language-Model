@@ -1,29 +1,19 @@
-# Use the official Python image from the Docker Hub
+# Use the official Python image as the base image
 FROM python:3.10-slim
 
-# Install packages
-RUN apt-get update && apt-get install -y \
-    pciutils \
-    curl \
-    nano \
-    && rm -rf /var/lib/apt/lists/*
-
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
 # Copy the requirements file into the container
 COPY requirements.txt .
 
-# Update pip
-RUN pip install --upgrade pip
-
-# Install the necessary packages
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
+# Copy the rest of the application files into the container
 COPY . .
 
-# Expose the port
+# Expose the port that Streamlit will run on
 EXPOSE 8501
 
 # Run the Streamlit application
