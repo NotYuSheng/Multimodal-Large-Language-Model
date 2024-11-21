@@ -26,3 +26,4 @@ if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
 else
     echo "-- Model(s) already pulled --"
 fi
+exit 0
