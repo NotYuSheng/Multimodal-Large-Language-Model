@@ -67,3 +67,15 @@ API calls to Ollama server can be made to
 ```
 <host-ip>:11434
 ```
+
+## Star History
+Thank you for showing your support by starring this project. Your recognition is greatly appreciated! ⭐
+<div align="center">
+  <a href="https://star-history.com/#NotYuSheng/Multimodal-Large-Language-Model&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=NotYuSheng/Multimodal-Large-Language-Model&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=NotYuSheng/Multimodal-Large-Language-Model&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=NotYuSheng/Multimodal-Large-Language-Model&type=Date" />
+    </picture>
+  </a>
+</div>
