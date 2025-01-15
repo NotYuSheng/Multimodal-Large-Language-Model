@@ -1,12 +1,16 @@
 Installation
 =====
 
+.. note::
+
+   Project will run on GPU by default. To run on CPU, use the ``docker-compose.cpu.yml`` instead.
+
 1. Clone this repository and navigate to the project folder:
 
    .. code-block:: bash
 
-       git clone https://github.com/NotYuSheng/ChannelGPT-Tool.git
-       cd ChannelGPT-Tool
+       git clone https://github.com/NotYuSheng/Multimodal-Large-Language-Model.git
+       cd Multimodal-Large-Language-Model
 
 2. Build the Docker images:
 
@@ -20,20 +24,14 @@ Installation
 
        docker-compose up -d
 
-4. Access the Open-WebUI webpage from the host:
+4. Access the Streamlit webpage from the host:
 
    .. code-block:: text
 
-       <host-ip>:8080
+       <host-ip>:8501
 
-   Access the FastAPI docs page from:
+   API calls to Ollama server can be made to:
 
    .. code-block:: text
 
-       <host-ip>:8000/docs
-
-5. Import the Model and Tool in Open-WebUI:  
-   After accessing the Open-WebUI interface, navigate to the `Workspace` tab. Use the following JSON files to import the model and tool:
-
-   - **Model:** `open-webui_json/channelgpt_model.json`  
-   - **Tool:** `open-webui_json/tool-youtube.json`
+       <host-ip>:11434
